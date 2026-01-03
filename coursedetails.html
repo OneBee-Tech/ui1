@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Advanced Corporate Finance &amp; Valuation - EduCommerce</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1f3b61",
+                        "secondary": "#e8904f",
+                        "accent": "#2d6a4f",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#14181e",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        /* Hand-drawn underline animation mostly static for now but prepared */
+        .hand-underline path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 0;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#1a202c] font-display antialiased">
+<!-- Top Navigation -->
+<nav class="sticky top-0 z-50 w-full transition-all duration-300 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<!-- Logo -->
+<div class="flex items-center gap-3">
+<div class="relative w-10 h-10 flex items-center justify-center bg-primary rounded-lg text-white">
+<span class="material-symbols-outlined text-[28px]">school</span>
+</div>
+<span class="font-display font-bold text-xl tracking-tight text-primary">Commerce Edu</span>
+</div>
+<!-- Desktop Menu -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="homepage.html">Home</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="coursecatalog.html">Courses</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="consultancy.html">Consultancy</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="studymaterial.html">Study Materials</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="aboutus.html">About</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="contactus.html">Contact</a>
+
+</div>
+<!-- CTA -->
+<div class="hidden md:flex items-center gap-4">
+<a class="text-sm font-semibold text-primary hover:text-secondary transition-colors" href="login.html">Login</a>
+<a class="bg-primary text-white text-sm font-medium px-5 py-2.5 rounded-lg shadow-sm hover:bg-[#152a45] hover:shadow-md transition-all" href="signup.html">Get Started</a>
+</div>
+<!-- Mobile Menu Button -->
+<div class="md:hidden flex items-center">
+<button class="text-text-main">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<main class="w-full max-w-[1280px] mx-auto px-4 md:px-8 py-8">
+<!-- Breadcrumbs -->
+<!-- <div class="mb-6 flex flex-wrap gap-2 text-sm text-[#5b6f8b]">
+<a class="hover:text-primary hover:underline" href="#">Courses</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary hover:underline" href="#">Finance</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-[#101419] font-medium">Advanced Corporate Finance &amp; Valuation</span>
+</div> -->
+<!-- Hero Heading -->
+<div class="flex flex-col md:flex-row justify-between gap-6 mb-8">
+<div class="flex-1 max-w-3xl">
+<div class="relative inline-block mb-3">
+<h1 class="text-3xl md:text-5xl font-black text-[#101419] leading-tight tracking-tight">
+                        Advanced Corporate Finance &amp; Valuation
+                    </h1>
+<!-- Hand-drawn underline SVG -->
+<svg class="absolute -bottom-2 left-0 w-full h-4 text-secondary pointer-events-none" preserveaspectratio="none" viewbox="0 0 300 15">
+<path d="M5 10 Q 150 2, 295 8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+</div>
+<p class="text-lg text-[#5b6f8b] mt-4 max-w-2xl leading-relaxed">
+                    Master advanced financial analysis and valuation techniques for strategic decision-making in a rapidly evolving market.
+                </p>
+<div class="flex flex-wrap items-center gap-6 mt-6">
+<div class="flex items-center gap-2">
+<span class="text-secondary font-bold text-lg">4.8</span>
+<div class="flex text-secondary">
+<span class="material-symbols-outlined text-[20px] fill-current">star</span>
+<span class="material-symbols-outlined text-[20px] fill-current">star</span>
+<span class="material-symbols-outlined text-[20px] fill-current">star</span>
+<span class="material-symbols-outlined text-[20px] fill-current">star</span>
+<span class="material-symbols-outlined text-[20px] fill-current">star_half</span>
+</div>
+<a class="text-[#1f3b61] underline decoration-dotted underline-offset-4 hover:text-secondary text-sm font-medium" href="#reviews">(120 reviews)</a>
+</div>
+<div class="flex items-center gap-2 text-sm text-[#5b6f8b]">
+<span class="material-symbols-outlined text-[18px]">update</span>
+<span>Last updated: Oct 2023</span>
+</div>
+<div class="flex items-center gap-2 text-sm text-[#5b6f8b]">
+<span class="material-symbols-outlined text-[18px]">language</span>
+<span>English</span>
+</div>
+</div>
+<div class="flex items-center gap-3 mt-6 p-2 pr-4 bg-white rounded-full border border-gray-100 w-fit shadow-sm">
+<img alt="Instructor" class="w-10 h-10 rounded-full object-cover border border-gray-200" data-alt="Portrait of Dr. Anya Sharma smiling professionally" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs-PSlD19Ho8KWXoVGMq01RkkFNbQN6-zwVn-IqrswmuaLqwtLAXNgGCS9qbnisqfPWN4hPNhWqpO5iyDBqFXr_dd6mfTnaBFpmqUVIUpolWQl4_jMur2NlLZU1oQjMEHIscSZrFPz7Jvm5I2dzSXU7nbCXvchFXONfmadYPvhBm2V-oP0osDSCMscTM06eklQ2ZuS3iLNyNb6xwE8fvjIuWZX9g85GHp2rKHo9f1vlLX8di6fYVJMY2anfeDs3dFt2ExQmzTFA0c"/>
+<div>
+<p class="text-xs text-[#5b6f8b] font-medium">Created by</p>
+<a class="text-sm font-bold text-primary hover:text-secondary" href="#instructor">Dr. Arjun Mehta</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Layout Split -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 relative">
+<!-- LEFT COLUMN (Content) -->
+<div class="lg:col-span-8 flex flex-col gap-10">
+<!-- Video Preview -->
+<div class="group relative w-full aspect-video bg-gray-900 rounded-xl overflow-hidden shadow-lg border border-gray-200">
+<img alt="Course Preview" class="w-full h-full object-cover opacity-80 group-hover:opacity-60 transition-opacity duration-300" data-alt="Financial data dashboard on a screen with graphs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUcdvUSDbdsYWsulj8GFGLhxQpTzs5n3t4J5cX2k0tb6rsgN3YKHGqgC-lV4Rzfrvrzc7P-e9NX91LXqzwP3blM06giwecZo2nXaDpudLK9XLGX44GaWh-Al8xqgg27PbfCBIq12p4GBX2i_aOv94dCZdmUbR5gTkCc2EILnQRz1EHRAvDF0R5126g9HcbdKclBJNCCxt-wrKrAO7pqtEapQXJLBL_2332C-gPWR34fzpxEH0rRo2WFZ5_-b9rAeuySDadg8Eo71E"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<button class="flex items-center justify-center w-20 h-20 bg-white/90 rounded-full text-primary shadow-[0_0_20px_rgba(0,0,0,0.2)] hover:scale-110 hover:bg-white transition-all duration-300">
+<span class="material-symbols-outlined text-5xl ml-1">play_arrow</span>
+</button>
+</div>
+<div class="absolute bottom-4 left-4 right-4 text-white">
+<p class="font-bold text-lg">Course Preview: DCF Modeling Basics</p>
+</div>
+</div>
+<!-- Gallery Thumbnails -->
+<div class="grid grid-cols-4 gap-4">
+<div class="aspect-[4/3] rounded-lg overflow-hidden border border-gray-200 cursor-pointer hover:ring-2 hover:ring-primary transition-all">
+<img class="w-full h-full object-cover" data-alt="Charts and graphs on paper" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUG6a1v2XcIhHHVjvlhBbtaXjXEU_XKEX9nK2GnSUdrrzRq35AKoJNXj3nubN5Z5n17-6gztALjSULpMBxlxxe-2rNym2LZj-4oig4jA4V0xUtYlURSJxwK5n31Jm75PQw3P2UTsMzQgBEEQ8TN1jMTFnILDSwzRPRjzSIojiwlheHwGBOf8YBvkVOLMVw8E0LepDw0CSAGOAwaCkpYzaPIkc7MRO4CJzvtjA3gsvjf5H4sSQCTBy713XGIS433jQszHtlFdNJREc"/>
+</div>
+<div class="aspect-[4/3] rounded-lg overflow-hidden border border-gray-200 cursor-pointer hover:ring-2 hover:ring-primary transition-all">
+<img class="w-full h-full object-cover" data-alt="Group of people discussing financial strategy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA1REbMrMFY1gPLHXRfQ_NMoMG3NxKj56ONH4TQFqC2lPaLb7vFwKdq2gaJjFUQfIlaiV5jPo077UppgsOQQxtw2xW17KdnrhYMUZF1sJNyV5ooymX5sqaVD49kCk9dIYpkcEUWH9GVY6zyV90pfV4zcAVyGQQYndhDOd1WSavqy84WinjOhUJZFT34Af7gnjhBDwGzKSYVuGHmosn1i1AnUZmVvTW6nDK-uvtoJ9fI4_JnIadZMNWOmaQm0ZQ0CCcyZvr20x8Y8Y"/>
+</div>
+<div class="aspect-[4/3] rounded-lg overflow-hidden border border-gray-200 cursor-pointer hover:ring-2 hover:ring-primary transition-all">
+<img class="w-full h-full object-cover" data-alt="Calculator and financial documents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNCtK7ms2JFuQu8y0h9V2rx4ZDrXXRLSkAwAZ4nsB75e3Q-khOWwR4TvamefF-r74uovkAlgQ8-Eb-9GC8yYn4u0ubJ8vQXctMlEpP64BvJ2gaVc9GC-O7_I58hceVUAF6moHZCqJ66DwrsUHMml8ABasTpSIg2WsLSiw7MlB9DZVtHSEKTWvZMRmti1_rtjFy92UdhgT53gXX7vMIysKwvqjbvr9lYJ1MI-BCtpLgvDyREITQgbhXjJnYJE-u1XdbOqt3PEEVIRk"/>
+</div>
+<div class="aspect-[4/3] rounded-lg overflow-hidden border border-gray-200 bg-gray-50 flex items-center justify-center cursor-pointer hover:ring-2 hover:ring-primary transition-all">
+<span class="text-sm font-bold text-gray-500">+12 Slides</span>
+</div>
+</div>
+<!-- Tabs Navigation -->
+<div class="border-b border-gray-200 sticky top-[72px] bg-background-light z-30 pt-2">
+<nav aria-label="Tabs" class="-mb-px flex space-x-8">
+<a class="border-secondary text-primary whitespace-nowrap border-b-2 py-4 px-1 text-sm font-bold" href="#overview">Overview</a>
+<a class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium" href="#curriculum">Curriculum</a>
+<a class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium" href="#instructor">Instructor</a>
+<a class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium" href="#reviews">Reviews</a>
+</nav>
+</div>
+<!-- Tab Content: Overview -->
+<section class="scroll-mt-32" id="overview">
+<h3 class="text-2xl font-bold text-[#101419] mb-6">What You'll Learn</h3>
+<div class="grid md:grid-cols-2 gap-4 mb-8">
+<div class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-accent shrink-0">check</span>
+<span class="text-sm text-gray-700">Master advanced valuation models including DCF, LBO, and M&amp;A analysis.</span>
+</div>
+<div class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-accent shrink-0">check</span>
+<span class="text-sm text-gray-700">Navigate capital budgeting decisions under uncertainty and risk.</span>
+</div>
+<div class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-accent shrink-0">check</span>
+<span class="text-sm text-gray-700">Understand complex capital structure optimization strategies.</span>
+</div>
+<div class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-accent shrink-0">check</span>
+<span class="text-sm text-gray-700">Perform sensitivity analysis and scenario planning for robust forecasting.</span>
+</div>
+<div class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-accent shrink-0">check</span>
+<span class="text-sm text-gray-700">Analyze real-world case studies of major corporate mergers.</span>
+</div>
+<div class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-accent shrink-0">check</span>
+<span class="text-sm text-gray-700">Build professional-grade financial models in Excel from scratch.</span>
+</div>
+</div>
+<h3 class="text-xl font-bold text-[#101419] mb-4">Description</h3>
+<div class="prose prose-blue text-gray-600 mb-8 leading-relaxed">
+<p class="mb-4">Dive deep into the mechanics of corporate value creation. This course goes beyond the basics to explore the sophisticated tools and techniques used by top investment bankers and CFOs. Whether you are looking to break into Wall Street or enhance your strategic decision-making skills, this comprehensive program covers it all.</p>
+<p class="mb-4">We will dissect real-world scenarios, including recent high-profile mergers and acquisitions, to understand the practical application of theoretical concepts. You will leave this course not just with knowledge, but with a portfolio of financial models you can use in your career.</p>
+<p class="font-medium text-[#101419]">Who this course is for:</p>
+<ul class="list-disc pl-5 space-y-1 mb-4">
+<li>Finance professionals seeking to upgrade their valuation skills.</li>
+<li>MBA students preparing for roles in Investment Banking or Private Equity.</li>
+<li>Corporate strategy managers looking to understand the financial implications of their decisions.</li>
+</ul>
+</div>
+<div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+<h3 class="text-lg font-bold text-[#101419] mb-3">Requirements</h3>
+<ul class="space-y-2">
+<li class="flex items-center gap-2 text-sm text-gray-700">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                                Strong understanding of financial accounting principles.
+                            </li>
+<li class="flex items-center gap-2 text-sm text-gray-700">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                                Proficiency with a financial calculator or Microsoft Excel.
+                            </li>
+<li class="flex items-center gap-2 text-sm text-gray-700">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                                Basic knowledge of corporate finance (TVM, NPV, IRR).
+                            </li>
+</ul>
+</div>
+</section>
+<!-- Tab Content: Curriculum -->
+<section class="scroll-mt-32" id="curriculum">
+<h3 class="text-2xl font-bold text-[#101419] mb-6">Course Content</h3>
+<div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+<span>3 Modules • 75 Lectures • 20h 15m Total Length</span>
+<button class="text-primary font-bold hover:underline">Expand all sections</button>
+</div>
+<div class="space-y-4">
+<!-- Module 1 -->
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<details class="group" open="">
+<summary class="flex items-center justify-between p-4 bg-gray-50 cursor-pointer hover:bg-gray-100 transition-colors list-none select-none">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined transition-transform group-open:rotate-180 text-gray-500">expand_more</span>
+<div>
+<h4 class="font-bold text-[#101419]">Module 1: Advanced Valuation Methods</h4>
+<p class="text-xs text-gray-500 mt-0.5">5 Lectures • 2 hours</p>
+</div>
+</div>
+</summary>
+<div class="divide-y divide-gray-100 bg-white">
+<div class="flex items-center justify-between p-3 pl-12 hover:bg-gray-50">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gray-400 text-[18px]">play_circle</span>
+<span class="text-sm text-primary underline decoration-dotted cursor-pointer">Introduction to DCF Modeling</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-xs text-secondary border border-secondary/30 px-2 py-0.5 rounded">Preview</span>
+<span class="text-xs text-gray-500">15:00</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 pl-12 hover:bg-gray-50">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gray-400 text-[18px]">play_circle</span>
+<span class="text-sm text-gray-700">Forecasting Free Cash Flows</span>
+</div>
+<span class="text-xs text-gray-500">25:30</span>
+</div>
+<div class="flex items-center justify-between p-3 pl-12 hover:bg-gray-50">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gray-400 text-[18px]">lock</span>
+<span class="text-sm text-gray-700">Terminal Value Calculations</span>
+</div>
+<span class="text-xs text-gray-500">45:00</span>
+</div>
+</div>
+</details>
+</div>
+<!-- Module 2 -->
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<details class="group">
+<summary class="flex items-center justify-between p-4 bg-gray-50 cursor-pointer hover:bg-gray-100 transition-colors list-none select-none">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined transition-transform group-open:rotate-180 text-gray-500">expand_more</span>
+<div>
+<h4 class="font-bold text-[#101419]">Module 2: Mergers &amp; Acquisitions</h4>
+<p class="text-xs text-gray-500 mt-0.5">8 Lectures • 4 hours</p>
+</div>
+</div>
+</summary>
+<div class="divide-y divide-gray-100 bg-white">
+<div class="p-4 text-sm text-gray-500 italic text-center">Content hidden. Expand to view lectures.</div>
+</div>
+</details>
+</div>
+<!-- Module 3 -->
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<details class="group">
+<summary class="flex items-center justify-between p-4 bg-gray-50 cursor-pointer hover:bg-gray-100 transition-colors list-none select-none">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined transition-transform group-open:rotate-180 text-gray-500">expand_more</span>
+<div>
+<h4 class="font-bold text-[#101419]">Module 3: Capital Structure &amp; Payout Policy</h4>
+<p class="text-xs text-gray-500 mt-0.5">6 Lectures • 3.5 hours</p>
+</div>
+</div>
+</summary>
+<div class="divide-y divide-gray-100 bg-white">
+<div class="p-4 text-sm text-gray-500 italic text-center">Content hidden. Expand to view lectures.</div>
+</div>
+</details>
+</div>
+</div>
+</section>
+<!-- Tab Content: Instructor -->
+<section class="scroll-mt-32 border-t border-gray-200 pt-8" id="instructor">
+<h3 class="text-2xl font-bold text-[#101419] mb-6">Instructor</h3>
+<div class="flex flex-col md:flex-row gap-8">
+<div class="shrink-0 flex flex-col gap-2">
+<div class="bg-white p-2 shadow-lg rotate-1 border border-gray-200 w-48 h-auto">
+<img alt="Dr. Anya Sharma" class="w-full aspect-[4/5] object-cover mb-2" data-alt="Portrait of Dr. Anya Sharma" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6Jfj29FMOLCQ-k86K-fJCWfqA0vbVm-suHSyG5ccGSfHeybPG6MIMcvIqgT9yhIofE9x4nFlbB8HNopwSN2aTKYzj7GUMTshRR70CVvG6g1y_ggZi2mq0WO_J5MtyxinsWSjApqup7pni8EVrBGBn5_FpN1GTbjs6ODNyZKGtJgf3Vscp_8evbVAuTlIX5yLEnvzxF38Wfbg18g5AAFr4ZGHpbiCTAzze8QIzps-tbGBsaJs9rw-2J3Fs0mDZvjKSZedMSmjrDr0"/>
+<div class="text-center font-handwriting text-gray-600 text-sm italic font-serif">Dr. Anya</div>
+</div>
+<div class="flex gap-2 justify-center mt-2">
+<a class="text-gray-400 hover:text-primary" href="#"><span class="material-symbols-outlined text-[20px]">link</span></a>
+<a class="text-gray-400 hover:text-primary" href="#"><span class="material-symbols-outlined text-[20px]">mail</span></a>
+</div>
+</div>
+<div class="flex-1">
+<h4 class="text-xl font-bold text-primary">Dr. Anya Sharma, CFA</h4>
+<p class="text-secondary font-medium mb-4">Senior Financial Analyst &amp; Lecturer</p>
+<div class="prose prose-sm text-gray-600 mb-6">
+<p>Dr. Sharma has over 15 years of experience in investment banking and corporate finance. She served as a Director at Global Capital Partners before returning to academia. Her research focuses on behavioral finance and market efficiency.</p>
+<p>She is passionate about making complex financial concepts accessible to students worldwide.</p>
+</div>
+<p class="text-sm font-bold text-gray-900 mb-3">More courses by Dr. Sharma:</p>
+<div class="flex gap-4 overflow-x-auto pb-4">
+<a class="shrink-0 w-40 group" href="#">
+<img class="w-full h-24 object-cover rounded-md mb-2 group-hover:opacity-80" data-alt="Stock market chart" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt4yrdbt9gb58DkI1qGCVV3Aui1jytqjVlkkOF_QLnasNkgstFX4cuIwbRXte_pMLF6uZLWh7XN0b8G99XZUcIOBOwC3oU-u-aAXOh968rSR6M-DkVog7g6upqbQdjFSKp29JXkES8XtS6jm0UO3lUjFuYIWhA853jYdAVtpGKDjwBxBJTyYXwcc0rCVsc9yuZWilB2P1f_PObjftvUfidoEHBIeZCBvVK1eti2tcCpnA2DNDxJxk8sqeFWWWR4XJzamJc9Ylw3c0"/>
+<p class="text-xs font-bold text-gray-800 leading-tight group-hover:text-primary">Financial Modeling</p>
+</a>
+<a class="shrink-0 w-40 group" href="#">
+<img class="w-full h-24 object-cover rounded-md mb-2 group-hover:opacity-80" data-alt="Gold coins stack" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVk85E-Ek51Ahj9nFUC5ySaCN-c4mHBZITG_pCBuEgr9tAZV6zsiDFV5eXqdFAtltpgwgdsY9O38pYFOFAoENfoUaQ4yumeL-CUSlqTxfUbw-gWp9mxrKnBFyl2zOF0zMQOPALgn7EQ7u6gDG2ZGwDhL0rqj5KJDCbsLjY0gOgO_9R4_tWnMmI6sW1iodwHFMDwUYi8UNB3qN4cOVshXa0syAFSteMI7jsh-1TUhJcqYAWpqVhG7chDtCG4W5R0lTcfCskmvIVqa0"/>
+<p class="text-xs font-bold text-gray-800 leading-tight group-hover:text-primary">Investment Banking 101</p>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Tab Content: Reviews -->
+<section class="scroll-mt-32 border-t border-gray-200 pt-8" id="reviews">
+<h3 class="text-2xl font-bold text-[#101419] mb-6">Student Feedback</h3>
+<!-- Reuse RatingSummary styled code logic here but customized for layout -->
+<div class="flex flex-col md:flex-row gap-8 mb-10">
+<div class="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-xl border border-gray-200 min-w-[200px]">
+<span class="text-5xl font-black text-[#101419]">4.8</span>
+<div class="flex text-secondary my-2">
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star_half</span>
+</div>
+<span class="text-sm text-gray-500 font-medium">Course Rating</span>
+</div>
+<div class="flex-1 space-y-2">
+<!-- 5 star -->
+<div class="flex items-center gap-3">
+<div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+<div class="bg-primary h-2.5 rounded-full" style="width: 70%"></div>
+</div>
+<div class="flex text-secondary w-20">
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+</div>
+<span class="text-xs text-gray-500 w-8">70%</span>
+</div>
+<!-- 4 star -->
+<div class="flex items-center gap-3">
+<div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+<div class="bg-primary h-2.5 rounded-full" style="width: 25%"></div>
+</div>
+<div class="flex text-secondary w-20">
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] text-gray-300">star</span>
+</div>
+<span class="text-xs text-gray-500 w-8">25%</span>
+</div>
+<!-- 3 star -->
+<div class="flex items-center gap-3">
+<div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+<div class="bg-primary h-2.5 rounded-full" style="width: 3%"></div>
+</div>
+<div class="flex text-secondary w-20">
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] text-gray-300">star</span>
+<span class="material-symbols-outlined text-[16px] text-gray-300">star</span>
+</div>
+<span class="text-xs text-gray-500 w-8">3%</span>
+</div>
+<!-- 2 star -->
+<div class="flex items-center gap-3">
+<div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+<div class="bg-primary h-2.5 rounded-full" style="width: 1%"></div>
+</div>
+<div class="flex text-secondary w-20">
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] text-gray-300">star</span>
+<span class="material-symbols-outlined text-[16px] text-gray-300">star</span>
+<span class="material-symbols-outlined text-[16px] text-gray-300">star</span>
+</div>
+<span class="text-xs text-gray-500 w-8">1%</span>
+</div>
+<!-- 1 star -->
+<div class="flex items-center gap-3">
+<div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+<div class="bg-primary h-2.5 rounded-full" style="width: 1%"></div>
+</div>
+<div class="flex text-secondary w-20">
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] text-gray-300">star</span>
+<span class="material-symbols-outlined text-[16px] text-gray-300">star</span>
+<span class="material-symbols-outlined text-[16px] text-gray-300">star</span>
+<span class="material-symbols-outlined text-[16px] text-gray-300">star</span>
+</div>
+<span class="text-xs text-gray-500 w-8">1%</span>
+</div>
+</div>
+</div>
+<!-- Individual Reviews -->
+<div class="space-y-6">
+<div class="border-b border-gray-100 pb-6">
+<div class="flex items-center gap-4 mb-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">JD</div>
+<div>
+<h5 class="font-bold text-sm text-[#101419]">John Doe</h5>
+<div class="flex text-secondary text-xs">
+<span class="material-symbols-outlined text-[14px] fill-current">star</span>
+<span class="material-symbols-outlined text-[14px] fill-current">star</span>
+<span class="material-symbols-outlined text-[14px] fill-current">star</span>
+<span class="material-symbols-outlined text-[14px] fill-current">star</span>
+<span class="material-symbols-outlined text-[14px] fill-current">star</span>
+<span class="text-gray-400 ml-2">1 week ago</span>
+</div>
+</div>
+</div>
+<p class="text-gray-600 text-sm leading-relaxed">Excellent content, highly recommend! The module on LBOs was particularly enlightening and helped me ace my interview.</p>
+</div>
+<div class="border-b border-gray-100 pb-6">
+<div class="flex items-center gap-4 mb-3">
+<div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary font-bold">SM</div>
+<div>
+<h5 class="font-bold text-sm text-[#101419]">Sarah Miller</h5>
+<div class="flex text-secondary text-xs">
+<span class="material-symbols-outlined text-[14px] fill-current">star</span>
+<span class="material-symbols-outlined text-[14px] fill-current">star</span>
+<span class="material-symbols-outlined text-[14px] fill-current">star</span>
+<span class="material-symbols-outlined text-[14px] fill-current">star</span>
+<span class="material-symbols-outlined text-[14px] text-gray-300">star</span>
+<span class="text-gray-400 ml-2">2 months ago</span>
+</div>
+</div>
+</div>
+<p class="text-gray-600 text-sm leading-relaxed">Challenging but rewarding. Make sure you brush up on your accounting before starting, otherwise Module 1 will be tough.</p>
+</div>
+</div>
+<button class="mt-6 w-full py-2 border border-gray-300 rounded-lg text-sm font-bold text-gray-700 hover:bg-gray-50">Load More Reviews</button>
+</section>
+</div>
+<!-- RIGHT COLUMN (Sticky Sidebar) -->
+<div class="lg:col-span-4 h-full">
+<div class="sticky top-24 space-y-6">
+<!-- Course Card -->
+<div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 relative">
+<!-- Organic shape bg for price area -->
+<div class="absolute top-0 left-0 w-full h-32 bg-primary/5 -z-0">
+<svg class="absolute bottom-0 left-0 w-full h-12 text-white" preserveaspectratio="none" viewbox="0 0 1200 120">
+<path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="currentColor"></path>
+</svg>
+</div>
+<div class="p-6 relative z-10">
+<div class="flex items-end gap-2 mb-2">
+<span class="text-3xl font-black text-[#101419]">₹1199</span>
+<span class="text-lg text-gray-400 line-through mb-1">₹4999</span>
+<span class="text-xs font-bold text-secondary bg-secondary/10 px-2 py-1 rounded mb-2 ml-auto">~70% OFF</span>
+</div>
+<div class="flex items-center gap-2 text-accent text-sm font-bold mb-6">
+<span class="material-symbols-outlined text-[18px]">alarm</span>
+<span>2 days left at this price!</span>
+</div>
+<div class="space-y-3">
+<button class="w-full h-12 bg-primary hover:bg-[#152a45] text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                                     <a href="enroll.html">Enroll Now</a>
+                                 </button>
+<button class="w-full h-12 bg-white border-2 border-secondary text-secondary font-bold rounded-lg hover:bg-secondary/5 transition-colors flex items-center justify-center gap-2">
+                                     Add to Cart
+                                 </button>
+</div>
+<div class="flex justify-center mt-4">
+<button class="text-sm text-gray-500 hover:text-secondary flex items-center gap-1 transition-colors group">
+<span class="material-symbols-outlined text-[20px] group-hover:fill-current">favorite</span>
+                                     Add to Wishlist
+                                 </button>
+</div>
+</div>
+<div class="px-6 pb-6 pt-2">
+<p class="font-bold text-[#101419] mb-4 text-sm">This course includes:</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-sm text-gray-600">
+<span class="material-symbols-outlined text-gray-400">ondemand_video</span>
+<span>20 hours on-demand video</span>
+</li>
+<li class="flex items-center gap-3 text-sm text-gray-600">
+<span class="material-symbols-outlined text-gray-400">description</span>
+<span>75 lectures</span>
+</li>
+<li class="flex items-center gap-3 text-sm text-gray-600">
+<span class="material-symbols-outlined text-gray-400">download</span>
+<span>Downloadable Excel templates</span>
+</li>
+<li class="flex items-center gap-3 text-sm text-gray-600">
+<span class="material-symbols-outlined text-gray-400">all_inclusive</span>
+<span>Full lifetime access</span>
+</li>
+<li class="flex items-center gap-3 text-sm text-gray-600">
+<span class="material-symbols-outlined text-gray-400">devices</span>
+<span>Access on mobile and TV</span>
+</li>
+<li class="flex items-center gap-3 text-sm text-gray-600">
+<span class="material-symbols-outlined text-gray-400">emoji_events</span>
+<span>Certificate of completion</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Share -->
+<div class="flex items-center justify-between px-2">
+<span class="text-sm font-bold text-gray-600">Share this course:</span>
+<div class="flex gap-2">
+<button class="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:border-primary hover:text-primary transition-colors">
+<span class="text-xs font-bold">FB</span>
+</button>
+<button class="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:border-primary hover:text-primary transition-colors">
+<span class="text-xs font-bold">X</span>
+</button>
+<button class="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:border-primary hover:text-primary transition-colors">
+<span class="text-xs font-bold">In</span>
+</button>
+</div>
+</div>
+<!-- Related Courses Sidebar -->
+<div>
+<h4 class="font-bold text-[#101419] mb-4 text-sm">Related Courses</h4>
+<div class="space-y-4">
+<a class="flex gap-3 group" href="#">
+<img class="w-20 h-16 object-cover rounded-md" data-alt="Financial modeling screenshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnDiEbEhm_xCwtqvQYw0eKRoM1SdurEiPTXEyBzfw6pvYXX9FiPUwbug26Ol46Ctbnlv41Nqe5hUqmnpipiki1dAs_oTrtNnQnFV0_NZONDDf5MD2OOfPPcmFpoGcsAvGxK3DWhMqdUFS7ppiJW75MWDE8OyKM7K3KOJbMfJg8viqnCkdBIhFFzGz9i8IUn9OVtu5LRk27H1LLwDAswRTf2LtBLkYQTji16K_AVLx6Uq5xgqpT1fyfJ4QZFfbx9HOgy7AknnJvpIw"/>
+<div>
+<p class="text-sm font-bold text-[#101419] group-hover:text-primary line-clamp-2">Financial Modeling Masterclass</p>
+<p class="text-xs text-gray-500">₹3499</p>
+<div class="flex items-center gap-1 text-[10px] text-secondary">
+<span class="font-bold">4.7</span>
+<span class="material-symbols-outlined text-[12px] fill-current">star</span>
+</div>
+</div>
+</a>
+<a class="flex gap-3 group" href="#">
+<img class="w-20 h-16 object-cover rounded-md" data-alt="Quantitative finance graphics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6fu6lLpbnrS2aiMXjGuG3O8Qk2BNLnVN6AcP8A-qj_w7vXBp2EHHG3SYSmAA_u7GLuhJRQSCmzYB50vsadw1GXPN5Y7D6AvxameYh3o1YXg3HtgE0NvxSwDPNHHfFMM2tADINvWpsYzMW6_bGkWb7euJWqR_o3kkVDL98GdZisejV7Te3Qfh8BvjywPzjHz7rv_X2ZMTkKK5cdQRDpfNd_2kOKTuNTmn4gFG0YSkhAB4v3FMHPhgmxkeYeD_1b0jv39fynlt4mXg"/>
+<div>
+<p class="text-sm font-bold text-[#101419] group-hover:text-primary line-clamp-2">Quantitative Finance &amp; Python</p>
+<p class="text-xs text-gray-500">₹5999</p>
+<div class="flex items-center gap-1 text-[10px] text-secondary">
+<span class="font-bold">4.9</span>
+<span class="material-symbols-outlined text-[12px] fill-current">star</span>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Additional Sections -->
+<div class="mt-20 border-t border-gray-200 pt-12">
+<!-- Frequently Bought Together -->
+<h3 class="text-2xl font-bold text-[#101419] mb-8">Frequently Bought Together</h3>
+<div class="flex flex-col lg:flex-row gap-6 items-center p-6 border border-gray-200 rounded-xl bg-gray-50">
+<div class="flex flex-1 flex-col sm:flex-row gap-4 items-center w-full">
+<!-- Item 1 (Current) -->
+<div class="flex gap-4 items-center">
+<div class="relative w-32 aspect-video rounded-lg overflow-hidden border border-gray-300">
+<img class="object-cover w-full h-full" data-alt="Current course thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdACenYW8pIZk9BEpH8I7rivLV7EcutRqaEaeqcwy85YzBJWidMdyWX43hcB535N-X8s9pgLayg3pT5jrG3j-0WrHq2RYCiILrae3F06If6pgsWOvkxyDto2dAkE9hFg3J0oL1J6CHPYqtDvti8SGD9Tuf95CDUW3XMf78LaEK-n5xEg_peM-jSrcazOwBon4B-AOGNRla5LzWY_6urXagM9okZQC5RMMqnw-AzVJyyvJJ_P2wYs551yELj1wrVdYLgijXWZ8fPmM"/>
+</div>
+<div class="text-sm">
+<p class="font-bold text-[#101419]">This Course</p>
+<p class="font-bold text-[#101419]">₹4999</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-gray-400 text-3xl hidden sm:block">add</span>
+<span class="material-symbols-outlined text-gray-400 text-3xl block sm:hidden">arrow_downward</span>
+<!-- Item 2 -->
+<div class="flex gap-4 items-center">
+<div class="relative w-32 aspect-video rounded-lg overflow-hidden border border-gray-300">
+<img class="object-cover w-full h-full" data-alt="Excel spreadsheet on monitor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxJSo_0aS1bt1tb7gJsuu25YBPsHMSUZW9hVAiZ_cPxvTfk19cxuCnsPOT9v7bhxSRL_Zu-73WOcof4af6dqBbhub5peOoVxHi1lVQO9mvbUmOGsc2SwTQ9UgEjCK-az5sh4Oy87E5B4hUnjLuk9YDw9c6FfwfHUHuuRAPiPSSniiMIcfO88xWo-5C1wT0jf9GwfEeHHvi2QUP-ROqXiP5o7PUXOoWaDXZlE2K1Zp4YZcXDMmbloa1zokrsZEcELfhmRDYCIV79NA"/>
+</div>
+<div class="text-sm">
+<a class="font-bold text-[#101419] hover:underline" href="#">Excel for Finance</a>
+<p class="font-bold text-[#101419]">₹2499</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-gray-400 text-3xl hidden sm:block">add</span>
+<span class="material-symbols-outlined text-gray-400 text-3xl block sm:hidden">arrow_downward</span>
+<!-- Item 3 -->
+<div class="flex gap-4 items-center">
+<div class="relative w-32 aspect-video rounded-lg overflow-hidden border border-gray-300">
+<img class="object-cover w-full h-full" data-alt="Equity research analytics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_XKPdZcuj7h-aUxuf-mpz__5oLqCsRUX8HUktwmNzo4nWufPSE_A7GshpkY87zN1nZ_1vl3WIEpPFeklTl3PhJJYqYq_H3ZQmOwNsHZVncWuVadRX22qmzWamxrSIbQfabN70TRAW7C8qfm7ylyfSyxrkqbfG69m_hDzWnf9JUP-qzFWMQKMIYrtPw9VVOP3ULpLujfHYxksZ7uNQGVEWgD5oz145ji0VfxFUa_JZP6ds3qnJjETIVH8fYGf6WCJNvk5gG5upxFQ"/>
+</div>
+<div class="text-sm">
+<a class="font-bold text-[#101419] hover:underline" href="#">Equity Research</a>
+<p class="font-bold text-[#101419]">₹3999</p>
+</div>
+</div>
+</div>
+<!-- Total & Action -->
+<div class="w-full lg:w-64 flex flex-col gap-3 lg:border-l lg:border-gray-200 lg:pl-6">
+<div class="flex justify-between lg:block">
+<p class="text-lg text-gray-500">Total Price:</p>
+<p class="text-2xl font-black text-[#101419]">₹9999 <span class="text-sm font-normal text-gray-400 line-through">₹11497</span></p>
+</div>
+<button class="w-full py-3 bg-secondary hover:bg-[#d68040] text-white font-bold rounded-lg shadow-md transition-colors">
+                        Buy Bundle
+                    </button>
+</div>
+</div>
+<!-- Similar Courses Carousel -->
+<div class="mt-16 mb-20">
+<div class="flex justify-between items-end mb-6">
+<h3 class="text-2xl font-bold text-[#101419]">You might also like</h3>
+<div class="flex gap-2">
+<button class="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100"><span class="material-symbols-outlined">chevron_left</span></button>
+<button class="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Course 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-video rounded-lg overflow-hidden mb-3 relative">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Accounting ledger" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTH2m8vtYYTJ1o9NA975BV6foOju9gBbtLKXF-gMlB4YhSWk5N9y7Co6Upb9Hng3j7S0XyDdFhmxVQDK_ukHsIriXJkJ6M_KS0ma7xjtkopg0MpLz0C-NEoakcf5w4Acox1lE4GfQQFzIkPsATsGIBspDeZI3KcRTUBY0b9wdH521I1pvNCCAxtOIWLbFDe987btM5DBoAffDt48yBrlVuax6I5s7VNieKxmG-rz12CwKWOsATcQaHxdViR_daVQLwnUhJOq7dUQ8"/>
+</div>
+<h4 class="font-bold text-[#101419] text-base leading-tight mb-1 group-hover:text-primary">Advanced Accounting</h4>
+<p class="text-xs text-gray-500 mb-2">Prof. David Lee</p>
+<div class="flex items-center gap-1 text-secondary text-xs mb-2">
+<span class="font-bold">4.6</span>
+<div class="flex"><span class="material-symbols-outlined text-[14px] fill-current">star</span><span class="material-symbols-outlined text-[14px] fill-current">star</span><span class="material-symbols-outlined text-[14px] fill-current">star</span><span class="material-symbols-outlined text-[14px] fill-current">star</span><span class="material-symbols-outlined text-[14px] fill-current">star_half</span></div>
+<span class="text-gray-400">(450)</span>
+</div>
+<p class="font-bold text-[#101419]">₹3499</p>
+</div>
+<!-- Course 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-video rounded-lg overflow-hidden mb-3 relative">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Legal documents for finance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm1OLPCJhU25kan17HJEWgj1Tj_x5ViwgbAkJkedKsg4IRUG9O4kITnxfgBZ4VGIr1M2B-PGRZG7hnff4lOOVhsK0h6LHiov_zLn4XXgo84hoJCgaLATyCqNu3MCjdZmiFiAN858a7gvTMjLm5TG8bcZ0olx4umPYjZ6iKg_nkRFCXdkxF6K2tkOyqKMOHnRDKpEovmkxXU5FP_0GigCzt5pnhAE97p58sTpNrgveizAJrDZOgMOb4cB9ZO7QIWIAfn95VJkxXcY4"/>
+</div>
+<h4 class="font-bold text-[#101419] text-base leading-tight mb-1 group-hover:text-primary">Corporate Law for Finance</h4>
+<p class="text-xs text-gray-500 mb-2">Sarah Jenkins, JD</p>
+<div class="flex items-center gap-1 text-secondary text-xs mb-2">
+<span class="font-bold">4.8</span>
+<div class="flex"><span class="material-symbols-outlined text-[14px] fill-current">star</span><span class="material-symbols-outlined text-[14px] fill-current">star</span><span class="material-symbols-outlined text-[14px] fill-current">star</span><span class="material-symbols-outlined text-[14px] fill-current">star</span><span class="material-symbols-outlined text-[14px] fill-current">star</span></div>
+<span class="text-gray-400">(210)</span>
+</div>
+<p class="font-bold text-[#101419]">₹2999</p>
+</div>
+<!-- Course 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-video rounded-lg overflow-hidden mb-3 relative">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Stock trading monitors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAtGWWNuTNR360PaGEuxqaIs3UrWIcHsj_XUdEBaUc8s2LCuS1gSpvf1jstfOC45srzr_aUFJ-8fWXotx8JxvOshzs6pa4OYZnhhFAh02uhDzIt34RdhzU3x8eoU0MXHWq2cfEOwtzgI-jBubWm52cz2s1sG-NGd3rY-Lp2hYvAoCqbNPpqt4Da78h6N_vNvvSbb5y0SOSly8hdrfTtQpxuPCpezW9DJKKOhzs1t8P6REgp8zDR10Gm2GsjCI0LnhoPhg-cVFfk3k"/>
+</div>
+<h4 class="font-bold text-[#101419] text-base leading-tight mb-1 group-hover:text-primary">Algorithmic Trading</h4>
+<p class="text-xs text-gray-500 mb-2">TechFinance Academy</p>
+<div class="flex items-center gap-1 text-secondary text-xs mb-2">
+<span class="font-bold">4.9</span>
+<div class="flex"><span class="material-symbols-outlined text-[14px] fill-current">star</span><span class="material-symbols-outlined text-[14px] fill-current">star</span><span class="material-symbols-outlined text-[14px] fill-current">star</span><span class="material-symbols-outlined text-[14px] fill-current">star</span><span class="material-symbols-outlined text-[14px] fill-current">star</span></div>
+<span class="text-gray-400">(890)</span>
+</div>
+<p class="font-bold text-[#101419]">₹6999</p>
+</div>
+<!-- Course 4 -->
+<div class="group cursor-pointer">
+<div class="aspect-video rounded-lg overflow-hidden mb-3 relative">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Calculator and money" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEPtCmRnNwHbZ61aZ6FS08VO7UbX1T9kKiBc3_n-sJEDumZgm30I39Rw_gZxb7ErgwvwNNCC2IBLw6tqHSmTzIYtnWeVHHbmXAraOwfFFOh94oOXmWgt8mLiQbdPqKS3lZXSw_hN0ZTeeXXY8IbiuomRsqYpkLLYsAlF55sH_EuVmDcp88lXageBxO4m3y_ZTD5SCnn7FSjY8lO0x4Isw8dQNyH364LCFLX4-TQy4ENSxTO5yWsqxBsZ8DQygwCgONG6qSVkexVxg"/>
+</div>
+<h4 class="font-bold text-[#101419] text-base leading-tight mb-1 group-hover:text-primary">Private Equity Fundamentals</h4>
+<p class="text-xs text-gray-500 mb-2">Global Investment Inst.</p>
+<div class="flex items-center gap-1 text-secondary text-xs mb-2">
+<span class="font-bold">4.7</span>
+<div class="flex"><span class="material-symbols-outlined text-[14px] fill-current">star</span><span class="material-symbols-outlined text-[14px] fill-current">star</span><span class="material-symbols-outlined text-[14px] fill-current">star</span><span class="material-symbols-outlined text-[14px] fill-current">star</span><span class="material-symbols-outlined text-[14px] fill-current">star_half</span></div>
+<span class="text-gray-400">(120)</span>
+</div>
+<p class="font-bold text-[#101419]">₹4500</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

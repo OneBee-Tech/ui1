@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Secure Enrollment - Commerce Edu</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;family=Noto+Sans:wght@300..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1f3b61",
+                        "secondary": "#e8904f",
+                        "accent": "#2d6a4f",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#14181e",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom styles for organic feel */
+        .organic-border {
+            border: 2px solid #e5e7eb;
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+        }
+        .organic-border:hover {
+            border-color: #1f3b61;
+            transform: translateY(-1px);
+        }
+        .scribble-underline {
+            position: relative;
+            text-decoration: none;
+        }
+        .scribble-underline::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            background: #e8904f;
+            border-radius: 2px;
+            opacity: 0.7;
+        }
+        /* Hide scrollbar for clean horizontal scroll if needed */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#101419] font-display antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header -->
+<nav class="sticky top-0 z-50 w-full transition-all duration-300 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<!-- Logo -->
+<div class="flex items-center gap-3">
+<div class="relative w-10 h-10 flex items-center justify-center bg-primary rounded-lg text-white">
+<span class="material-symbols-outlined text-[28px]">school</span>
+</div>
+<span class="font-display font-bold text-xl tracking-tight text-primary">Commerce Edu</span>
+</div>
+<!-- Desktop Menu -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="homepage.html">Home</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="coursecatalog.html">Courses</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="consultancy.html">Consultancy</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="studymaterial.html">Study Materials</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="aboutus.html">About</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="contactus.html">Contact</a>
+
+</div>
+<!-- CTA -->
+<div class="hidden md:flex items-center gap-4">
+<a class="text-sm font-semibold text-primary hover:text-secondary transition-colors" href="login.html">Login</a>
+<a class="bg-primary text-white text-sm font-medium px-5 py-2.5 rounded-lg shadow-sm hover:bg-[#152a45] hover:shadow-md transition-all" href="signup.html">Get Started</a>
+</div>
+<!-- Mobile Menu Button -->
+<div class="md:hidden flex items-center">
+<button class="text-text-main">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<div class="flex flex-1 flex-col py-8 px-4 sm:px-6 lg:px-8 max-w-[1280px] mx-auto w-full">
+<!-- Breadcrumbs -->
+
+<!-- Main Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+<!-- LEFT COLUMN: Checkout Form -->
+<div class="lg:col-span-7 xl:col-span-8 flex flex-col gap-8">
+<!-- Page Heading -->
+<div class="flex flex-col gap-2">
+<h1 class="text-[#1f3b61] text-3xl md:text-4xl font-black leading-tight tracking-[-0.02em]">Complete Your Enrollment</h1>
+<p class="text-[#5b6f8b] text-base font-normal">Finalize your details to start learning instantly.</p>
+</div>
+<!-- Billing Information -->
+<section class="bg-white rounded-2xl p-6 shadow-sm border border-[#e9edf1]">
+<div class="flex items-center gap-3 mb-6 border-b border-[#e9edf1] pb-4">
+<span class="material-symbols-outlined text-[#1f3b61]">person</span>
+<h3 class="text-lg font-bold text-[#1f3b61]">Billing Information</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<label class="flex flex-col flex-1">
+<p class="text-[#101419] text-sm font-medium pb-2">Full Name</p>
+<input class="form-input w-full rounded-lg border border-[#d4dae3] bg-gray-50 focus:border-[#1f3b61] focus:ring-1 focus:ring-[#1f3b61] h-12 px-4 text-base placeholder:text-[#9ca3af]" placeholder="e.g. John Doe"/>
+</label>
+<label class="flex flex-col flex-1">
+<p class="text-[#101419] text-sm font-medium pb-2">Email Address</p>
+<input class="form-input w-full rounded-lg border border-[#d4dae3] bg-gray-50 focus:border-[#1f3b61] focus:ring-1 focus:ring-[#1f3b61] h-12 px-4 text-base placeholder:text-[#9ca3af]" placeholder="john@example.com" type="email"/>
+</label>
+<label class="flex flex-col flex-1 md:col-span-2">
+<p class="text-[#101419] text-sm font-medium pb-2">Billing Address</p>
+<input class="form-input w-full rounded-lg border border-[#d4dae3] bg-gray-50 focus:border-[#1f3b61] focus:ring-1 focus:ring-[#1f3b61] h-12 px-4 text-base placeholder:text-[#9ca3af] mb-3" placeholder="Street Address"/>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+<input class="form-input w-full rounded-lg border border-[#d4dae3] bg-gray-50 focus:border-[#1f3b61] focus:ring-1 focus:ring-[#1f3b61] h-12 px-4 text-base placeholder:text-[#9ca3af]" placeholder="City"/>
+<input class="form-input w-full rounded-lg border border-[#d4dae3] bg-gray-50 focus:border-[#1f3b61] focus:ring-1 focus:ring-[#1f3b61] h-12 px-4 text-base placeholder:text-[#9ca3af]" placeholder="State/Province"/>
+<input class="form-input w-full rounded-lg border border-[#d4dae3] bg-gray-50 focus:border-[#1f3b61] focus:ring-1 focus:ring-[#1f3b61] h-12 px-4 text-base placeholder:text-[#9ca3af] col-span-2 md:col-span-1" placeholder="Zip/Postal Code"/>
+</div>
+</label>
+</div>
+</section>
+<!-- Payment Method -->
+<section class="bg-white rounded-2xl p-6 shadow-sm border border-[#e9edf1]">
+<div class="flex items-center gap-3 mb-6 border-b border-[#e9edf1] pb-4">
+<span class="material-symbols-outlined text-[#1f3b61]">payments</span>
+<h3 class="text-lg font-bold text-[#1f3b61]">Payment Method</h3>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Credit Card Option (Selected) -->
+<div class="rounded-xl border-2 border-[#1f3b61] bg-[#1f3b61]/5 p-4 transition-all">
+<label class="flex items-center gap-3 cursor-pointer mb-4">
+<input checked="" class="h-5 w-5 border-2 border-[#d4dae3] text-[#1f3b61] focus:ring-offset-0 focus:ring-0 checked:focus:border-[#1f3b61]" name="payment_method" type="radio"/>
+<span class="text-[#101419] text-base font-bold">Credit Card</span>
+<div class="ml-auto flex gap-2">
+<span class="material-symbols-outlined text-[#5b6f8b]">credit_card</span>
+</div>
+</label>
+<!-- Card Inputs -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 pl-8">
+<label class="flex flex-col md:col-span-2">
+<span class="text-xs font-semibold text-[#5b6f8b] uppercase tracking-wider mb-1">Card Number</span>
+<div class="relative">
+<input class="form-input w-full rounded-lg border border-[#d4dae3] bg-white h-11 pl-10 pr-4 text-base placeholder:text-[#9ca3af] focus:border-[#1f3b61] focus:ring-1 focus:ring-[#1f3b61]" placeholder="0000 0000 0000 0000"/>
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-[#9ca3af]">credit_card</span>
+</div>
+</label>
+<label class="flex flex-col">
+<span class="text-xs font-semibold text-[#5b6f8b] uppercase tracking-wider mb-1">Expiry Date</span>
+<input class="form-input w-full rounded-lg border border-[#d4dae3] bg-white h-11 px-4 text-base placeholder:text-[#9ca3af] focus:border-[#1f3b61] focus:ring-1 focus:ring-[#1f3b61]" placeholder="MM / YY"/>
+</label>
+<label class="flex flex-col">
+<span class="text-xs font-semibold text-[#5b6f8b] uppercase tracking-wider mb-1">CVC / CWW</span>
+<div class="relative">
+<input class="form-input w-full rounded-lg border border-[#d4dae3] bg-white h-11 pl-10 pr-4 text-base placeholder:text-[#9ca3af] focus:border-[#1f3b61] focus:ring-1 focus:ring-[#1f3b61]" placeholder="123"/>
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-[#9ca3af]">lock</span>
+</div>
+</label>
+</div>
+</div>
+<!-- PayPal Option -->
+<label class="flex items-center gap-3 rounded-xl border border-[#d4dae3] p-4 cursor-pointer hover:bg-gray-50 transition">
+<input class="h-5 w-5 border-2 border-[#d4dae3] text-[#1f3b61] focus:ring-offset-0 focus:ring-0" name="payment_method" type="radio"/>
+<span class="text-[#101419] text-base font-medium">PayPal</span>
+<div class="ml-auto text-[#1f3b61] font-bold italic text-sm">PayPal</div>
+</label>
+<!-- Google Pay Option -->
+<label class="flex items-center gap-3 rounded-xl border border-[#d4dae3] p-4 cursor-pointer hover:bg-gray-50 transition">
+<input class="h-5 w-5 border-2 border-[#d4dae3] text-[#1f3b61] focus:ring-offset-0 focus:ring-0" name="payment_method" type="radio"/>
+<span class="text-[#101419] text-base font-medium">Google Pay</span>
+<div class="ml-auto flex items-center justify-center bg-black text-white px-2 py-0.5 rounded text-xs font-bold">G Pay</div>
+</label>
+</div>
+</section>
+<!-- Terms & Actions -->
+<div class="flex flex-col gap-6 pt-2">
+<label class="flex items-start gap-3 cursor-pointer">
+<input class="mt-1 h-5 w-5 rounded border-2 border-[#d4dae3] text-[#1f3b61] focus:ring-offset-0 focus:ring-0" type="checkbox"/>
+<span class="text-sm text-[#5b6f8b] leading-relaxed">
+                            I agree to the <a class="scribble-underline text-[#1f3b61] font-medium" href="#">Terms &amp; Conditions</a> and <a class="scribble-underline text-[#1f3b61] font-medium" href="#">Refund Policy</a>. I understand that I can request a full refund within 30 days.
+                        </span>
+</label>
+<button class="w-full bg-[#1f3b61] hover:bg-[#162c4b] text-white text-lg font-bold py-4 px-8 rounded-xl shadow-lg shadow-[#1f3b61]/20 transform transition hover:-translate-y-1 active:translate-y-0 flex items-center justify-center gap-2 group">
+<span>Complete Enrollment</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<div class="flex items-center justify-center gap-2 text-xs text-[#5b6f8b]">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span>Your payment information is encrypted and secure.</span>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Order Summary (Sticky) -->
+<div class="lg:col-span-5 xl:col-span-4 relative">
+<div class="sticky top-24 flex flex-col gap-6">
+<!-- Summary Card -->
+<div class="bg-white rounded-2xl shadow-xl shadow-slate-200/50 border border-[#e9edf1] overflow-hidden">
+<div class="bg-[#1f3b61] px-6 py-4 flex items-center justify-between">
+<h3 class="text-white font-bold text-lg">Order Summary</h3>
+<span class="bg-white/10 text-white text-xs px-2 py-1 rounded">1 Item</span>
+</div>
+<div class="p-6 flex flex-col gap-6">
+<!-- Course Item -->
+<div class="flex gap-4 items-start">
+<div class="w-20 h-20 shrink-0 rounded-lg bg-gray-100 overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-br from-[#1f3b61]/80 to-[#2d6a4f]/80 mix-blend-multiply z-10"></div>
+<img alt="Abstract financial charts representing the Advanced Corporate Finance course" class="w-full h-full object-cover" data-alt="Abstract financial charts representing the Advanced Corporate Finance course" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYHn4slcCFbLZEoxCQrXpbrgVB5H9IBB7_1sRXnu7F3zI529b5TQZ4bu6u8ke68ioj6iuudHkGBlx4KrJzlNcQGFKa3TTaTYM7BK7JvPFWTrysB1CKh4snM3T9A4aH3DI6eV1rEoPoyl-E3jUSJfaKkYTbVW3ar4bALwAiNGVc_lhJgwyV_cZGYbHh2OkEVS0Fm47JhllmzJj48Pj3BqcZeZDyRoVupgUDbFD0eDtWSK2NoHcc7jQ58BggxjhBpmRMK9ddB3Z7aRs"/>
+</div>
+<div class="flex flex-col gap-1">
+<h4 class="text-[#101419] font-bold text-sm leading-snug">Advanced Corporate Finance &amp; Valuation</h4>
+<p class="text-[#5b6f8b] text-xs">Instructor: Dr. Sarah Miller</p>
+<p class="text-[#1f3b61] font-bold text-base mt-1">₹1199.00</p>
+</div>
+</div>
+<!-- Discount Code -->
+<div class="flex gap-2">
+<input class="flex-1 rounded-lg border border-[#d4dae3] bg-gray-50 h-10 px-3 text-sm placeholder:text-[#9ca3af] focus:border-[#1f3b61] focus:ring-0" placeholder="Discount Code"/>
+<button class="px-4 h-10 rounded-lg border border-[#d4dae3] text-[#5b6f8b] font-bold text-sm hover:bg-gray-100 hover:text-[#1f3b61] transition">Apply</button>
+</div>
+<!-- Calculations -->
+<div class="flex flex-col gap-3 border-t border-dashed border-[#d4dae3] pt-4">
+<div class="flex justify-between text-sm text-[#5b6f8b]">
+<span>Subtotal</span>
+<span>₹1199.00</span>
+</div>
+<div class="flex justify-between text-sm text-[#5b6f8b]">
+<span>Tax (0%)</span>
+<span>₹0.00</span>
+</div>
+<div class="flex justify-between text-lg font-black text-[#1f3b61] pt-2">
+<span>Total</span>
+<span>$499.00</span>
+</div>
+</div>
+<!-- Included Badges -->
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="inline-flex items-center gap-1 bg-[#2d6a4f]/10 text-[#2d6a4f] text-xs font-bold px-2 py-1 rounded-md">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                                    Lifetime Access
+                                </span>
+<span class="inline-flex items-center gap-1 bg-[#e8904f]/10 text-[#e8904f] text-xs font-bold px-2 py-1 rounded-md">
+<span class="material-symbols-outlined text-[14px]">card_membership</span>
+                                    Certificate
+                                </span>
+</div>
+</div>
+</div>
+<!-- Trust Elements -->
+<div class="bg-white rounded-xl p-5 border border-[#e9edf1] flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-[#e8904f]/10 flex items-center justify-center text-[#e8904f]">
+<span class="material-symbols-outlined">workspace_premium</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-[#101419]">Money-Back Guarantee</span>
+<span class="text-xs text-[#5b6f8b]">30 days, no questions asked.</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-[#2d6a4f]/10 flex items-center justify-center text-[#2d6a4f]">
+<span class="material-symbols-outlined">lock_person</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-[#101419]">Secure Checkout</span>
+<span class="text-xs text-[#5b6f8b]">256-bit SSL Encrypted payment.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- What Happens Next -->
+<div class="mt-20 border-t border-[#e9edf1] pt-12 pb-8">
+<div class="text-center mb-10">
+<h2 class="text-[#1f3b61] text-2xl font-bold mb-2">What happens next?</h2>
+<div class="h-1 w-20 bg-[#e8904f] mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+<!-- Connecting Line (Desktop Only) -->
+<div class="hidden md:block absolute top-8 left-[16%] right-[16%] h-0.5 border-t-2 border-dashed border-[#d4dae3] z-0"></div>
+<!-- Step 1 -->
+<div class="flex flex-col items-center text-center relative z-10">
+<div class="size-16 rounded-full bg-white border-4 border-[#1f3b61] text-[#1f3b61] flex items-center justify-center shadow-lg mb-4">
+<span class="material-symbols-outlined text-3xl">mail</span>
+</div>
+<h3 class="text-[#101419] font-bold text-lg mb-2">1. Confirmation</h3>
+<p class="text-[#5b6f8b] text-sm max-w-[200px]">We'll send you an email with your order receipt and login details.</p>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center text-center relative z-10">
+<div class="size-16 rounded-full bg-white border-4 border-[#e8904f] text-[#e8904f] flex items-center justify-center shadow-lg mb-4">
+<span class="material-symbols-outlined text-3xl">bolt</span>
+</div>
+<h3 class="text-[#101419] font-bold text-lg mb-2">2. Instant Access</h3>
+<p class="text-[#5b6f8b] text-sm max-w-[200px]">You will get immediate access to all course materials and videos.</p>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center text-center relative z-10">
+<div class="size-16 rounded-full bg-white border-4 border-[#2d6a4f] text-[#2d6a4f] flex items-center justify-center shadow-lg mb-4">
+<span class="material-symbols-outlined text-3xl">group_add</span>
+</div>
+<h3 class="text-[#101419] font-bold text-lg mb-2">3. Join the Community</h3>
+<p class="text-[#5b6f8b] text-sm max-w-[200px]">Get invited to our exclusive student community circle.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-white border-t border-[#e9edf1] mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-[1280px] mx-auto px-6 py-8 gap-4">
+<p class="text-[#5b6f8b] text-sm">© 2023 Commerce Edu. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-[#5b6f8b] hover:text-[#1f3b61] text-sm font-medium transition" href="#">Privacy Policy</a>
+<a class="text-[#5b6f8b] hover:text-[#1f3b61] text-sm font-medium transition" href="#">Terms of Service</a>
+<a class="text-[#5b6f8b] hover:text-[#1f3b61] text-sm font-medium transition" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

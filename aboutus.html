@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us - Commerce Edu</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1e3a5f",    // Deep Blue
+                        "secondary": "#e8904f",  // Warm Orange
+                        "accent": "#2d6a4f",     // Green
+                        "text-main": "#1a202c",  // Dark Gray
+                        "paper": "#fdfbf7",      // Warm Off-white
+                    },
+                    fontFamily: {
+                        "sans": ["Inter", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                    },
+                    backgroundImage: {
+                        'paper-texture': "url(\"data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E\")",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Utilities for Handmade Feel */
+        .hand-drawn-border {
+            border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+        }
+        .hand-drawn-box {
+            border-radius: 95% 4% 97% 5% / 4% 97% 5% 95%;
+        }
+        .tape-corner {
+            position: absolute;
+            width: 100px;
+            height: 30px;
+            background-color: rgba(255, 255, 255, 0.4);
+            transform: rotate(45deg);
+            top: 15px;
+            right: -30px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+        .marker-highlight {
+            position: relative;
+            z-index: 0;
+        }
+        .marker-highlight::before {
+            content: "";
+            position: absolute;
+            left: -5px;
+            right: -5px;
+            bottom: 2px;
+            height: 12px;
+            background-color: #e8904f;
+            opacity: 0.3;
+            z-index: -1;
+            transform: rotate(-1deg);
+            border-radius: 20px;
+        }
+        .polaroid-shadow {
+            box-shadow: 3px 4px 0px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-paper text-text-main font-sans antialiased overflow-x-hidden relative">
+<!-- Background Texture Overlay -->
+<div class="fixed inset-0 pointer-events-none z-50 mix-blend-multiply opacity-50 bg-paper-texture"></div>
+<!-- Navigation -->
+<nav class="sticky top-0 z-50 w-full transition-all duration-300 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<!-- Logo -->
+<div class="flex items-center gap-3">
+<div class="relative w-10 h-10 flex items-center justify-center bg-primary rounded-lg text-white">
+<span class="material-symbols-outlined text-[28px]">school</span>
+</div>
+<span class="font-display font-bold text-xl tracking-tight text-primary">Commerce Edu</span>
+</div>
+<!-- Desktop Menu -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="homepage.html">Home</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="coursecatalog.html">Courses</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="consultancy.html">Consultancy</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="studymaterial.html">Study Materials</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="aboutus.html">About</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="contactus.html">Contact</a>
+
+</div>
+<!-- CTA -->
+<div class="hidden md:flex items-center gap-4">
+<a class="text-sm font-semibold text-primary hover:text-secondary transition-colors" href="login.html">Login</a>
+<a class="bg-primary text-white text-sm font-medium px-5 py-2.5 rounded-lg shadow-sm hover:bg-[#152a45] hover:shadow-md transition-all" href="signup.html">Get Started</a>
+</div>
+<!-- Mobile Menu Button -->
+<div class="md:hidden flex items-center">
+<button class="text-text-main">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<!-- 1. Hero Banner -->
+<header class="relative bg-primary min-h-[60vh] flex flex-col justify-center overflow-hidden">
+<!-- Abstract Background Shapes -->
+<div class="absolute inset-0 opacity-10">
+<svg class="absolute top-0 right-0 w-1/2 h-full text-secondary" preserveaspectratio="none" viewbox="0 0 100 100">
+<path d="M50 0 C 20 20 80 50 0 100 L 100 100 L 100 0 Z" fill="currentColor"></path>
+</svg>
+<svg class="absolute bottom-0 left-0 w-1/3 h-2/3 text-white" preserveaspectratio="none" viewbox="0 0 100 100">
+<circle cx="0" cy="100" fill="currentColor" r="80"></circle>
+</svg>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16">
+<!-- Breadcrumbs -->
+<nav class="flex mb-8 items-center text-sm font-medium text-blue-100">
+<a class="hover:text-white transition-colors" href="#">Home</a>
+<span class="mx-3 opacity-50">/</span>
+<span class="text-white relative">
+                    About Us
+                    <!-- Underline sketch -->
+<svg class="absolute -bottom-1 left-0 w-full h-1" preserveaspectratio="none" viewbox="0 0 30 5">
+<path d="M0 2.5 Q 15 5 30 2.5" fill="none" stroke="#e8904f" stroke-width="2"></path>
+</svg>
+</span>
+</nav>
+<h1 class="font-serif text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                Our Story: <br/>
+<span class="italic font-light text-secondary">Teaching Commerce,</span><br/>
+                Building Futures.
+            </h1>
+<p class="text-blue-100 text-lg md:text-xl max-w-2xl font-light">
+                We're a team of practitioners, dreamers, and educators dedicated to making real-world commerce skills accessible to everyone.
+            </p>
+</div>
+<!-- Organic Wave Divider -->
+<div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180">
+<svg class="relative block w-[calc(100%+1.3px)] h-[80px]" data-name="Layer 1" preserveaspectratio="none" viewbox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+<path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#fdfbf7"></path>
+</svg>
+</div>
+</header>
+<!-- 2. Mission Statement -->
+<section class="py-20 md:py-28 relative">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+<!-- Decorative Hand Drawn Box Element -->
+<div class="absolute -inset-4 md:-inset-10 border-2 border-secondary/30 hand-drawn-box -rotate-1 pointer-events-none z-0 hidden md:block"></div>
+<div class="relative z-10">
+<span class="text-accent font-bold uppercase tracking-widest text-sm mb-4 block">Our Mission</span>
+<h2 class="font-serif text-3xl md:text-5xl font-bold text-primary leading-tight mb-8">
+                    To empower the next generation of commerce leaders with <span class="marker-highlight">authentic, real-world</span> education that goes beyond the textbook.
+                </h2>
+<div class="flex justify-end mt-8">
+<div class="flex flex-col items-center">
+<img alt="Founder Signature" class="h-16 opacity-80 -rotate-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBr50yzeeiUil_v3pr5Bys7D8PTRoUTcPuxDrLHL86wAxLNP3iAkGp4p6QGQ8BBZXjQHZQ53tOyHQmm-i8dpNqno4djG3jjBMIGDlHx8GuEu6b5lcgF7ZS9KUrArJ4c53hT8BiUFLw1qh9wyIMzR5MonbrsLoKqD1mFJxnJ-61AGJzHT89e7eQt-jnmE7grpTeyswtYjJXiN2ICo3WE5JoUrZkw7s7flv-y6OHDCbBkh-aXhSHfoXVN7Sn_KE5qBG6oMIV9FC5NkKk"/>
+<span class="text-sm text-gray-500 font-serif italic mt-2">James Carter, Founder</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Founder's Story -->
+<section class="py-20 bg-white relative overflow-hidden">
+<!-- Texture dot pattern -->
+<div class="absolute top-0 right-0 w-64 h-64 opacity-10" style="background-image: radial-gradient(#1e3a5f 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<!-- Photo Side -->
+<div class="relative order-2 lg:order-1">
+<div class="relative transform rotate-2 hover:rotate-0 transition-transform duration-500">
+<!-- Polaroid Frame -->
+<div class="bg-white p-4 pb-16 shadow-xl hand-drawn-box border border-gray-100 relative">
+<!-- Tape element -->
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 w-32 h-8 bg-yellow-100/80 shadow-sm rotate-1 z-20"></div>
+<div class="aspect-[4/5] bg-gray-200 overflow-hidden rounded-sm relative">
+<img alt="Portrait of James Carter, founder of Commerce Edu, smiling in a casual office setting" class="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqaQr_1rMK6j0_0L96_J5Ua2XPtqsDFOAnvpAcFQXi8DzVA8t3tCYNfoviyuj81EWmc17ugEX34kXDl020K8u7pguPm4bRvdgsqQayCTGW8Tkwb2yQdBzQqdL0dzzDJ1MLNofzzluDglIVJhGmcFZlxl7SKWxH21LSJyKMd1aYo_I_VwPSQnufs2sylCXsS8uuHs0SsabYE1La_KN96C-0ZD4SjZH0Yq0CNuqkfQNxmb-g7uVSazUz1ikr4hVGcpWckcX4LAsaWMI"/>
+</div>
+<div class="absolute bottom-4 left-0 w-full text-center font-serif text-gray-600 italic text-lg">
+                                New York, 2018
+                            </div>
+</div>
+</div>
+</div>
+<!-- Text Side -->
+<div class="order-1 lg:order-2">
+<h3 class="font-serif text-4xl font-bold text-primary mb-6 relative inline-block">
+                        The Spark
+                        <!-- Scribble circle -->
+<svg class="absolute -top-4 -right-8 w-24 h-24 text-secondary opacity-30 pointer-events-none" viewbox="0 0 100 100">
+<path d="M20,50 C20,20 80,20 80,50 C80,80 20,80 20,50" fill="none" stroke="currentColor" stroke-width="2"></path>
+</svg>
+</h3>
+<div class="prose prose-lg text-gray-600 mb-8">
+<p>
+                            It started with a simple frustration. I was hiring fresh graduates who knew the theory of commerce but stumbled when faced with the messy reality of running a business.
+                        </p>
+<p>
+                            I realized that the gap between academia and industry wasn't just a crack—it was a canyon. I decided to build a bridge.
+                        </p>
+</div>
+<!-- Pull Quote -->
+<div class="relative pl-8 border-l-4 border-secondary/50 py-2">
+<span class="material-symbols-outlined absolute -top-4 -left-3 bg-white text-secondary text-4xl">format_quote</span>
+<p class="font-serif text-2xl text-primary italic leading-relaxed">
+                            "We don't just teach you how to sell. We teach you how to solve problems for people."
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Our Values -->
+<section class="py-24 bg-paper relative">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="font-serif text-4xl font-bold text-primary">What We Believe In</h2>
+<div class="h-1 w-24 bg-accent mx-auto mt-4 rounded-full opacity-60"></div>
+</div>
+<div class="flex flex-wrap justify-center gap-8 lg:gap-12">
+<!-- Value Card 1 -->
+<div class="w-full sm:w-72 bg-white p-8 rounded-lg shadow-sm border border-gray-100 transform -rotate-1 hover:rotate-0 hover:-translate-y-2 transition-all duration-300 polaroid-shadow">
+<div class="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center mb-6 text-primary border-2 border-primary/20 hand-drawn-border">
+<span class="material-symbols-outlined text-3xl">verified</span>
+</div>
+<h3 class="font-serif text-xl font-bold text-primary mb-3">Authenticity First</h3>
+<p class="text-gray-600 text-sm leading-relaxed">
+                        We don't sugarcoat the challenges. We teach the hard truths alongside the wins.
+                    </p>
+</div>
+<!-- Value Card 2 -->
+<div class="w-full sm:w-72 bg-white p-8 rounded-lg shadow-sm border border-gray-100 transform rotate-2 hover:rotate-0 hover:-translate-y-2 transition-all duration-300 polaroid-shadow mt-4 md:mt-0">
+<div class="w-14 h-14 rounded-full bg-orange-50 flex items-center justify-center mb-6 text-secondary border-2 border-secondary/20 hand-drawn-border">
+<span class="material-symbols-outlined text-3xl">handshake</span>
+</div>
+<h3 class="font-serif text-xl font-bold text-primary mb-3">Community Led</h3>
+<p class="text-gray-600 text-sm leading-relaxed">
+                        Learning happens together. We build circles of trust, not just classrooms.
+                    </p>
+</div>
+<!-- Value Card 3 -->
+<div class="w-full sm:w-72 bg-white p-8 rounded-lg shadow-sm border border-gray-100 transform -rotate-2 hover:rotate-0 hover:-translate-y-2 transition-all duration-300 polaroid-shadow">
+<div class="w-14 h-14 rounded-full bg-green-50 flex items-center justify-center mb-6 text-accent border-2 border-accent/20 hand-drawn-border">
+<span class="material-symbols-outlined text-3xl">psychology</span>
+</div>
+<h3 class="font-serif text-xl font-bold text-primary mb-3">Curiosity Driven</h3>
+<p class="text-gray-600 text-sm leading-relaxed">
+                        The market changes daily. We teach you to ask the right questions, not memorize answers.
+                    </p>
+</div>
+<!-- Value Card 4 -->
+<div class="w-full sm:w-72 bg-white p-8 rounded-lg shadow-sm border border-gray-100 transform rotate-1 hover:rotate-0 hover:-translate-y-2 transition-all duration-300 polaroid-shadow mt-4 md:mt-0">
+<div class="w-14 h-14 rounded-full bg-purple-50 flex items-center justify-center mb-6 text-purple-600 border-2 border-purple-200 hand-drawn-border">
+<span class="material-symbols-outlined text-3xl">rocket_launch</span>
+</div>
+<h3 class="font-serif text-xl font-bold text-primary mb-3">Action Oriented</h3>
+<p class="text-gray-600 text-sm leading-relaxed">
+                        Theory is safe. Action is where growth happens. We push you to build.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Team Section -->
+<section class="py-24 bg-white relative">
+<!-- Abstract hand drawn line -->
+<svg class="absolute top-10 left-0 w-full h-20 text-gray-100 pointer-events-none" preserveaspectratio="none">
+<path d="M0 10 Q 300 40 600 10 T 1200 10" fill="none" stroke="currentColor" stroke-width="2"></path>
+</svg>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="font-serif text-4xl font-bold text-primary text-center mb-16">Meet the Instructors</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+<!-- Team Member 1 -->
+<div class="flex flex-col items-center text-center group">
+<div class="relative mb-6 p-2">
+<!-- Hand drawn circle SVG -->
+<svg class="absolute inset-0 w-full h-full text-primary group-hover:text-secondary transition-colors duration-300" viewbox="0 0 100 100">
+<path d="M50,5 C75,5 95,25 95,50 C95,75 75,95 50,95 C25,95 5,75 5,50 C5,25 25,5 50,5" fill="none" stroke="currentColor" stroke-dasharray="300" stroke-dashoffset="0" stroke-width="1.5" style="transform: rotate(-5deg); transform-origin: center;"></path>
+</svg>
+<div class="w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-inner">
+<img alt="Sarah Jenkins, Marketing Strategy Lead" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGaPrulbRAAFXCPbzk2tst5gql2JLBYHIUv9CZR8i7oKAhjscG6VTnkWaLBYHWzXZiV1cO-9C-dx5Rgxu7uMkU2byP9XHgH7XYaVGlr0pU9nObQZuRozajh02Ksx707lEaKhNNRX1_AtRDxxALEotphztSQakHokRYSNZCZWdEuCbKRMSuKVRYM6KBDWjR754QCEs9YL08h0uxGv5qDi1CM27K42YCYfATHzKQuYGqqyDUwpgjpW1K7o70aMDZmawkm8qhNeWNzeA"/>
+</div>
+</div>
+<h3 class="font-serif text-2xl font-bold text-primary">Sarah Jenkins</h3>
+<p class="text-accent font-medium text-sm mb-3">Marketing Strategy Lead</p>
+<p class="text-gray-500 text-sm mb-4 max-w-xs">
+                        Former VP at TechGlobal. Sarah breaks down complex funnels into simple human interactions.
+                    </p>
+<div class="flex gap-2 flex-wrap justify-center">
+<span class="px-3 py-1 bg-gray-100 text-xs text-gray-600 rounded-full hand-drawn-box">Branding</span>
+<span class="px-3 py-1 bg-gray-100 text-xs text-gray-600 rounded-full hand-drawn-box">Growth</span>
+</div>
+</div>
+<!-- Team Member 2 -->
+<div class="flex flex-col items-center text-center group">
+<div class="relative mb-6 p-2">
+<svg class="absolute inset-0 w-full h-full text-primary group-hover:text-secondary transition-colors duration-300" viewbox="0 0 100 100">
+<path d="M50,2 C80,5 98,28 96,50 C94,80 78,98 50,96 C20,94 2,75 4,50 C6,25 25,2 50,2" fill="none" stroke="currentColor" stroke-width="1.5" style="transform: rotate(15deg); transform-origin: center;"></path>
+</svg>
+<div class="w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-inner">
+<img alt="David Chen, E-commerce Operations Expert" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFNi9Q45BK8E77CNG9lf_3IsTNN-3kyjHnjTvC0XmJ5JhP1qCIaqZU96w-3vCFyF9Z_5DqSNAZU01Eo6HJ7GP5Zd_1pHHj71xYngkpqc1BBSxwrlCxkotUSPfww2Fr4LuHuty0vqhVG_9J5IIQcpWSVg_6XoCvxh-loiWXge7cJCN5RSS3sj7d-qxUN6SqNR_Gv0o1z6Kmv1oYKtLoZVn5psHphwRJ-JVcLeCVcO0TlaMVbMVyH76EGT_3lxNfuLb0hxoJehO2rZY"/>
+</div>
+</div>
+<h3 class="font-serif text-2xl font-bold text-primary">David Chen</h3>
+<p class="text-accent font-medium text-sm mb-3">Operations Expert</p>
+<p class="text-gray-500 text-sm mb-4 max-w-xs">
+                        Supply chain wizard who scaled two D2C brands to 8 figures. Obsessed with logistics.
+                    </p>
+<div class="flex gap-2 flex-wrap justify-center">
+<span class="px-3 py-1 bg-gray-100 text-xs text-gray-600 rounded-full hand-drawn-box">Logistics</span>
+<span class="px-3 py-1 bg-gray-100 text-xs text-gray-600 rounded-full hand-drawn-box">Scale</span>
+</div>
+</div>
+<!-- Team Member 3 -->
+<div class="flex flex-col items-center text-center group">
+<div class="relative mb-6 p-2">
+<svg class="absolute inset-0 w-full h-full text-primary group-hover:text-secondary transition-colors duration-300" viewbox="0 0 100 100">
+<path d="M50,8 C85,8 92,30 92,50 C92,70 85,92 50,92 C15,92 8,70 8,50 C8,30 15,8 50,8" fill="none" stroke="currentColor" stroke-width="1.5" style="transform: rotate(90deg); transform-origin: center;"></path>
+</svg>
+<div class="w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-inner">
+<img alt="Elena Rodriguez, Financial Strategy Lead" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmjTovZDwbYodJVpyT59A7kFd1jImlJwVMB7M6Wq5-1Fw4w9IdDfHSdCaN4AAjWX_3leI9NlW_svgVbfkJ1C7KPIrup5adzsH8KybzPYFwTbrl6SoxJTMwZWHqCeeSwQZLoFwXfVE5vcvDxadkit5JIGPB0u2WT2XqbFFdl4cqoKGcJU6ynz9nlVPqSNmdFoXLaZ1NK1_PiIOoiTd10gqzJIhVl9IbzBwf2PFwvhswY6Pl4pqz0nh0qU0SYPU7IM8brl4BwNh-Y0s"/>
+</div>
+</div>
+<h3 class="font-serif text-2xl font-bold text-primary">Elena Rodriguez</h3>
+<p class="text-accent font-medium text-sm mb-3">Finance Strategy</p>
+<p class="text-gray-500 text-sm mb-4 max-w-xs">
+                        CPA turned educator. Elena makes spreadsheets feel like art and profitability inevitable.
+                    </p>
+<div class="flex gap-2 flex-wrap justify-center">
+<span class="px-3 py-1 bg-gray-100 text-xs text-gray-600 rounded-full hand-drawn-box">Finance</span>
+<span class="px-3 py-1 bg-gray-100 text-xs text-gray-600 rounded-full hand-drawn-box">Planning</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. Timeline / Journey -->
+<section class="py-24 bg-paper relative overflow-hidden">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<h2 class="font-serif text-4xl font-bold text-primary text-center mb-16">Our Journey</h2>
+<div class="relative">
+<!-- Wavy vertical line -->
+<div class="absolute left-1/2 transform -translate-x-1/2 h-full top-0 w-1 hidden md:block">
+<svg height="100%" preserveaspectratio="none" width="20">
+<path d="M10 0 Q 20 50 10 100 T 10 200 T 10 300 T 10 400 T 10 500 T 10 600 T 10 700 T 10 800 T 10 900" fill="none" stroke="#cbd5e1" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+</svg>
+</div>
+<!-- Milestone 1 -->
+<div class="relative z-10 mb-16 md:mb-24">
+<div class="flex flex-col md:flex-row items-center">
+<div class="w-full md:w-1/2 md:pr-12 text-center md:text-right">
+<span class="inline-block bg-accent text-white px-3 py-1 rounded-sm hand-drawn-box transform -rotate-2 text-sm font-bold mb-2">2018</span>
+<h3 class="font-serif text-2xl font-bold text-primary">The Idea Formed</h3>
+<p class="text-gray-600 mt-2 text-sm">Founded in a small coffee shop in Brooklyn with just a laptop and a notebook.</p>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary border-4 border-white shadow-md z-20 my-4 md:my-0 flex-shrink-0 relative">
+<!-- Dot center -->
+</div>
+<div class="w-full md:w-1/2 md:pl-12">
+<div class="bg-white p-3 shadow-md rounded-lg transform rotate-2 max-w-xs mx-auto md:mx-0">
+<img alt="Coffee shop table with notebook and laptop representing the company's start" class="w-full h-32 object-cover rounded-sm grayscale hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOOfqpnXwFFLoLsG32xHEvSQSUIOXE529jYtYxtjTsCE9eQV4EwHazXAPyuW5bjvrHXtRlEwZdecwUZxtCACma90I_CLvX64ZZBjdNsb7DrVWIYRHfzQy1MLMC8Eaf03vUVxoTEEmo3DQtmiL396YNzt1F0AVikzpjdRc9LEAXJteqaP02kTMNtlKOoEXwYXH7owvxFe6N8TQcwX6UonNP9U-z1mkZe9RRPwLxby6SlQKmM7UA2xZ2rjEdO9Zz2aQaSxKpoLLCkso"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Milestone 2 -->
+<div class="relative z-10 mb-16 md:mb-24">
+<div class="flex flex-col md:flex-row-reverse items-center">
+<div class="w-full md:w-1/2 md:pl-12 text-center md:text-left">
+<span class="inline-block bg-accent text-white px-3 py-1 rounded-sm hand-drawn-box transform rotate-1 text-sm font-bold mb-2">2020</span>
+<h3 class="font-serif text-2xl font-bold text-primary">First 1,000 Students</h3>
+<p class="text-gray-600 mt-2 text-sm">We launched our flagship "Commerce Foundations" course and the community exploded.</p>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary border-4 border-white shadow-md z-20 my-4 md:my-0 flex-shrink-0"></div>
+<div class="w-full md:w-1/2 md:pr-12">
+<div class="bg-white p-3 shadow-md rounded-lg transform -rotate-1 max-w-xs mx-auto md:ml-auto md:mr-0">
+<img alt="Group of students brainstorming in a workshop" class="w-full h-32 object-cover rounded-sm grayscale hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTiLTcTUmh5w0rx2CRSZvwKFnlWKYkLJrGy6PlQbrkAkJL0jKYnq9mQmDq0LgI7y6m7pqwNSpNgFN9fHcqbTpRuFqoH6O_3lUyWYOL_T97VIDrzMpE8Cs7CO8Q8KuX7mSBcUwxlLarlDfcXpeboQykYo1oRr1gOpVovipCV-ep_9mkpDuqVYURB52eKL4toScomAQFxWnGrZKi15r-XEyHTsW8kr7c-r99trwJLc6k9sVc7a7eu9c84RarvjRHDkyapcjNv3tSlqQ"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Milestone 3 -->
+<div class="relative z-10">
+<div class="flex flex-col md:flex-row items-center">
+<div class="w-full md:w-1/2 md:pr-12 text-center md:text-right">
+<span class="inline-block bg-accent text-white px-3 py-1 rounded-sm hand-drawn-box transform -rotate-2 text-sm font-bold mb-2">Today</span>
+<h3 class="font-serif text-2xl font-bold text-primary">Global Impact</h3>
+<p class="text-gray-600 mt-2 text-sm">Partnering with Fortune 500 companies and empowering students in 40+ countries.</p>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary border-4 border-white shadow-md z-20 my-4 md:my-0 flex-shrink-0"></div>
+<div class="w-full md:w-1/2 md:pl-12">
+<div class="bg-white p-3 shadow-md rounded-lg transform rotate-3 max-w-xs mx-auto md:mx-0">
+<img alt="Diverse team collaborating around a computer screen" class="w-full h-32 object-cover rounded-sm grayscale hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHexQ4aw8c41IFQ4C3eH1cA5JrHJiKdjP_o9Dkl0BBeXNvlVNHaffpBWSH2yIPDia1NyH1LrIKwvbp_ycqRwqJ9jTwb5IkistE6BEYqP6ri1mYfp05A11pkzPxcCgdw-yUhkZw5jT6b5Us6cOttn_XxHJXrya0tXtFjxLo-c10nvO-JeAAisQjJuypqcRDFBDGEPjj2CnDGH4jrpYc5Sf-10VDm1uIaglYWlMD1hJyX5_1RiJX_Ije3blW8KRF0c0WGzko2-eeySs"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. Why Choose Us -->
+<section class="py-24 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+<!-- Text Content -->
+<div class="flex flex-col justify-center">
+<h2 class="font-serif text-4xl font-bold text-primary mb-6">Numbers That Matter</h2>
+<p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        We measure success not by certificates issued, but by careers transformed. Our approach yields results because it's rooted in the reality of the market.
+                    </p>
+<ul class="space-y-4">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary mr-3 mt-1">check_circle</span>
+<span class="text-gray-700">Curriculum updated monthly to match market trends</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary mr-3 mt-1">check_circle</span>
+<span class="text-gray-700">Direct mentorship from industry practitioners</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary mr-3 mt-1">check_circle</span>
+<span class="text-gray-700">Lifetime access to our private community</span>
+</li>
+</ul>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-paper p-6 rounded-2xl border-2 border-primary/5 flex flex-col items-center justify-center text-center">
+<span class="font-serif text-5xl font-bold text-primary mb-2">94%</span>
+<span class="text-sm font-medium text-gray-500 uppercase tracking-wide">Job Placement</span>
+</div>
+<div class="bg-primary p-6 rounded-2xl border-2 border-primary flex flex-col items-center justify-center text-center transform translate-y-4">
+<span class="font-serif text-5xl font-bold text-secondary mb-2">50k+</span>
+<span class="text-sm font-medium text-blue-200 uppercase tracking-wide">Alumni</span>
+</div>
+<div class="bg-accent/10 p-6 rounded-2xl border-2 border-accent/20 flex flex-col items-center justify-center text-center">
+<span class="font-serif text-5xl font-bold text-accent mb-2">120+</span>
+<span class="text-sm font-medium text-gray-500 uppercase tracking-wide">Courses</span>
+</div>
+<div class="bg-paper p-6 rounded-2xl border-2 border-primary/5 flex flex-col items-center justify-center text-center transform translate-y-4">
+<span class="font-serif text-5xl font-bold text-primary mb-2">4.9</span>
+<span class="text-sm font-medium text-gray-500 uppercase tracking-wide">Avg Rating</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. Call to Action -->
+<section class="py-24 bg-secondary relative overflow-hidden">
+<!-- Background Pattern -->
+<svg class="absolute inset-0 w-full h-full opacity-10 text-white" fill="currentColor">
+<pattern height="20" id="pattern-circles" patternunits="userSpaceOnUse" width="20" x="0" y="0">
+<circle cx="2" cy="2" r="1"></circle>
+</pattern>
+<rect fill="url(#pattern-circles)" height="100%" width="100%" x="0" y="0"></rect>
+</svg>
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+<h2 class="font-serif text-4xl md:text-5xl font-bold text-white mb-6">Ready to write your own story?</h2>
+<p class="text-white/90 text-xl mb-10 max-w-2xl mx-auto">
+                Join thousands of students turning their commerce dreams into sustainable careers.
+            </p>
+<div class="flex flex-col sm:flex-row justify-center gap-4 relative">
+<!-- Hand drawn arrow -->
+<svg class="absolute -left-12 -top-8 w-24 h-24 text-primary hidden md:block transform -rotate-12" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 100 100">
+<path d="M10,10 Q50,50 80,80 M60,80 L80,80 L80,60"></path>
+</svg>
+<a class="bg-primary text-white text-lg font-bold py-4 px-8 rounded-lg shadow-lg hover:bg-primary/90 hover:scale-105 transition-all transform hand-drawn-box" href="#">
+                    Explore Courses
+                </a>
+<a class="bg-white text-primary text-lg font-bold py-4 px-8 rounded-lg shadow-lg hover:bg-gray-50 hover:scale-105 transition-all transform hand-drawn-box" href="#">
+                    Book Consultancy
+                </a>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-primary text-blue-100 py-12 border-t border-blue-900">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 bg-secondary rounded-sm flex items-center justify-center text-white text-xs">
+<span class="material-symbols-outlined text-sm">school</span>
+</div>
+<span class="font-serif font-bold text-white tracking-wide">Commerce Edu</span>
+</div>
+<div class="text-sm">
+                © 2023 Commerce Edu Inc. All rights reserved.
+            </div>
+<div class="flex gap-6">
+<a class="hover:text-white transition-colors" href="#">Privacy</a>
+<a class="hover:text-white transition-colors" href="#">Terms</a>
+<a class="hover:text-white transition-colors" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>

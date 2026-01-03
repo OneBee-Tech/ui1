@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Us - CommerceEdu</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;family=Patrick+Hand&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1f3b61",
+                        "secondary": "#e8904f",
+                        "accent": "#2d6a4f",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#14181e",
+                        "text-dark": "#1a202c",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "hand": ["Patrick Hand", "cursive"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px",
+                        "hand": "255px 15px 225px 15px / 15px 225px 15px 255px",
+                    },
+                    boxShadow: {
+                        "hand": "2px 3px 0px 0px rgba(31, 59, 97, 0.1)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for textarea */
+        textarea::-webkit-scrollbar {
+            width: 8px;
+        }
+        textarea::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        textarea::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        textarea::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        
+        /* Organic border utility class since arbitrary values can be long */
+        .border-hand {
+            border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+        }
+        
+        .border-hand-sm {
+            border-radius: 20px 5px 18px 5px / 5px 18px 5px 20px;
+        }
+    </style>
+</head>
+<body class="bg-background-light text-text-dark font-display antialiased overflow-x-hidden">
+<div class="flex flex-col min-h-screen">
+<!-- Navbar -->
+<nav class="sticky top-0 z-50 w-full transition-all duration-300 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<!-- Logo -->
+<div class="flex items-center gap-3">
+<div class="relative w-10 h-10 flex items-center justify-center bg-primary rounded-lg text-white">
+<span class="material-symbols-outlined text-[28px]">school</span>
+</div>
+<span class="font-display font-bold text-xl tracking-tight text-primary">Commerce Edu</span>
+</div>
+<!-- Desktop Menu -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="homepage.html">Home</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="coursecatalog.html">Courses</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="consultancy.html">Consultancy</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="studymaterial.html">Study Materials</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="aboutus.html">About</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="contactus.html">Contact</a>
+
+</div>
+<!-- CTA -->
+<div class="hidden md:flex items-center gap-4">
+<a class="text-sm font-semibold text-primary hover:text-secondary transition-colors" href="login.html">Login</a>
+<a class="bg-primary text-white text-sm font-medium px-5 py-2.5 rounded-lg shadow-sm hover:bg-[#152a45] hover:shadow-md transition-all" href="signup.html">Get Started</a>
+</div>
+<!-- Mobile Menu Button -->
+<div class="md:hidden flex items-center">
+<button class="text-text-main">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative pt-12 pb-16 px-6 md:px-12 lg:px-20 overflow-hidden">
+<!-- Decorative Background Elements -->
+<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2"></div>
+<div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-accent/5 rounded-full blur-3xl -z-10 -translate-x-1/2 translate-y-1/2"></div>
+<div class="max-w-[1200px] mx-auto w-full relative">
+<!-- Breadcrumbs -->
+<!-- <div class="flex items-center gap-2 mb-6 font-hand text-lg text-slate-500">
+<a class="hover:text-primary hover:underline decoration-wavy decoration-secondary" href="#">Home</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-primary font-bold">Contact Us</span>
+</div> -->
+<!-- Heading -->
+<div class="max-w-2xl relative">
+<h1 class="text-5xl md:text-6xl font-black text-primary tracking-tight mb-4 relative z-10">
+                            Let's Connect
+                            <span class="absolute -bottom-2 left-0 w-32 h-3 bg-secondary/30 -z-10 rounded-full transform -rotate-2"></span>
+</h1>
+<p class="text-xl text-slate-600 leading-relaxed max-w-lg">
+                            Have questions about our courses or need expert consultancy? We're here to help you grow.
+                        </p>
+<!-- Decorative Arrow -->
+<div class="hidden md:block absolute top-10 right-0 translate-x-32 translate-y-4">
+<svg class="text-secondary rotate-12" fill="none" height="60" viewbox="0 0 100 60" width="100" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 50 C 30 40, 60 40, 90 10 M 90 10 L 80 15 M 90 10 L 85 25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="font-hand text-primary text-xl block -rotate-12 mt-2 ml-4">We don't bite!</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content Grid -->
+<section class="px-6 md:px-12 lg:px-20 pb-20">
+<div class="max-w-[1200px] mx-auto w-full">
+<div class="grid lg:grid-cols-12 gap-12 items-start">
+<!-- Contact Form (Left - 60%) -->
+<div class="lg:col-span-7 bg-white p-8 md:p-10 rounded-[40px_10px_30px_10px] shadow-[8px_8px_0px_0px_rgba(31,59,97,0.05)] border-2 border-primary/5 relative">
+<!-- Paper Clip Decoration -->
+<div class="absolute -top-4 left-10 w-8 h-16 bg-gray-200 rounded-full border-2 border-gray-300 z-10 hidden md:block"></div>
+<h3 class="text-2xl font-bold text-primary mb-8 flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">mail</span>
+                                Send us a message
+                            </h3>
+<form class="space-y-6">
+<div class="grid md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block text-sm font-bold text-primary ml-2" for="name">Name</label>
+<input class="w-full px-5 py-3.5 bg-gray-50 border-2 border-gray-200 focus:border-secondary focus:ring-0 text-text-dark rounded-hand transition-colors placeholder:text-gray-400" id="name" placeholder="Jane Cooper" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-bold text-primary ml-2" for="email">Email</label>
+<input class="w-full px-5 py-3.5 bg-gray-50 border-2 border-gray-200 focus:border-secondary focus:ring-0 text-text-dark rounded-hand transition-colors placeholder:text-gray-400" id="email" placeholder="jane@example.com" type="email"/>
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block text-sm font-bold text-primary ml-2" for="phone">Phone (Optional)</label>
+<input class="w-full px-5 py-3.5 bg-gray-50 border-2 border-gray-200 focus:border-secondary focus:ring-0 text-text-dark rounded-hand transition-colors placeholder:text-gray-400" id="phone" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-bold text-primary ml-2" for="subject">Subject</label>
+<div class="relative">
+<select class="w-full px-5 py-3.5 bg-gray-50 border-2 border-gray-200 focus:border-secondary focus:ring-0 text-text-dark rounded-hand transition-colors appearance-none cursor-pointer" id="subject">
+<option>Course Inquiry</option>
+<option>Consultancy Services</option>
+<option>General Support</option>
+<option>Partnership</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-bold text-primary ml-2" for="message">How can we help?</label>
+<textarea class="w-full px-5 py-4 bg-gray-50 border-2 border-gray-200 focus:border-secondary focus:ring-0 text-text-dark rounded-2xl transition-colors placeholder:text-gray-400 resize-none" id="message" placeholder="Tell us a bit about your needs..." rows="5"></textarea>
+</div>
+<div class="pt-4 flex items-center justify-between">
+<span class="font-hand text-gray-400 text-lg hidden md:block transform rotate-2">We typically reply in 24h!</span>
+<button class="group relative px-8 py-4 bg-secondary hover:bg-[#d68040] text-white font-bold text-lg rounded-hand shadow-[4px_4px_0px_0px_rgba(31,59,97,0.2)] hover:shadow-[2px_2px_0px_0px_rgba(31,59,97,0.2)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all flex items-center gap-2" type="button">
+<span>Send Message</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">send</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Contact Info (Right - 40%) -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<!-- Address Card -->
+<div class="bg-[#eef2f6] p-6 rounded-2xl border border-transparent hover:border-primary/10 transition-colors flex items-start gap-4 group">
+<div class="size-12 bg-white rounded-full flex items-center justify-center text-primary shadow-sm border border-gray-100 shrink-0 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<h4 class="font-bold text-primary text-lg mb-1">Our Office</h4>
+<p class="text-slate-600">123 Commerce Avenue, Suite 400<br/>New York, NY 10012</p>
+</div>
+</div>
+<!-- Email Card -->
+<div class="bg-[#fff4eb] p-6 rounded-2xl border border-transparent hover:border-secondary/10 transition-colors flex items-start gap-4 group">
+<div class="size-12 bg-white rounded-full flex items-center justify-center text-secondary shadow-sm border border-gray-100 shrink-0 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined">alternate_email</span>
+</div>
+<div>
+<h4 class="font-bold text-primary text-lg mb-1">Email Us</h4>
+<a class="text-slate-600 hover:text-secondary hover:underline" href="mailto:hello@commerceedu.com">hello@commerceedu.com</a>
+<p class="text-sm text-slate-500 mt-1">For careers: join@commerceedu.com</p>
+</div>
+</div>
+<!-- Phone Card -->
+<div class="bg-[#e6fcf5] p-6 rounded-2xl border border-transparent hover:border-accent/10 transition-colors flex items-start gap-4 group">
+<div class="size-12 bg-white rounded-full flex items-center justify-center text-accent shadow-sm border border-gray-100 shrink-0 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined">phone_in_talk</span>
+</div>
+<div>
+<h4 class="font-bold text-primary text-lg mb-1">Call Us</h4>
+<a class="text-slate-600 hover:text-accent hover:underline" href="tel:+15550000000">+1 (555) 000-0000</a>
+<p class="text-sm text-slate-500 mt-1">Mon-Fri, 9am - 6pm EST</p>
+</div>
+</div>
+<!-- Map Section -->
+<div class="mt-4 relative group">
+<div class="absolute inset-0 bg-primary rounded-hand rotate-1 opacity-10 group-hover:rotate-2 transition-transform"></div>
+<div class="relative bg-white p-2 rounded-hand border-2 border-primary/10 overflow-hidden h-64 shadow-lg">
+<iframe allowfullscreen="" data-alt="Interactive map showing the location of CommerceEdu office in New York City" data-location="New York City" height="100%" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30596073366!2d-74.25986548248684!3d40.69714941932609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1647963321522!5m2!1sen!2s" style="border:0; border-radius: 20px;" width="100%"></iframe>
+</div>
+<div class="absolute -bottom-4 -right-4 bg-white px-4 py-2 rounded-xl shadow-hand border border-gray-200 text-sm font-bold text-primary transform rotate-3 hover:rotate-0 transition-transform cursor-pointer">
+<a class="flex items-center gap-1" href="#">
+                                        Get Directions <span class="material-symbols-outlined text-sm">north_east</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Links -->
+<section class="bg-[#f0f4f8] py-16 px-6 relative border-y border-primary/5">
+<div class="max-w-[1000px] mx-auto text-center">
+<h2 class="text-3xl font-bold text-primary mb-8 font-hand">Looking for something specific?</h2>
+<div class="flex flex-wrap justify-center gap-4">
+<a class="px-6 py-3 bg-white border-2 border-dashed border-primary/30 rounded-full text-primary font-bold hover:bg-primary hover:text-white hover:border-transparent transition-all hover:-translate-y-1" href="#">
+                            Browse Courses
+                        </a>
+<a class="px-6 py-3 bg-white border-2 border-dashed border-primary/30 rounded-full text-primary font-bold hover:bg-secondary hover:text-white hover:border-transparent transition-all hover:-translate-y-1" href="#">
+                            Book Consultancy
+                        </a>
+<a class="px-6 py-3 bg-white border-2 border-dashed border-primary/30 rounded-full text-primary font-bold hover:bg-accent hover:text-white hover:border-transparent transition-all hover:-translate-y-1" href="#">
+                            Download Brochure
+                        </a>
+<a class="px-6 py-3 bg-white border-2 border-dashed border-primary/30 rounded-full text-primary font-bold hover:bg-gray-800 hover:text-white hover:border-transparent transition-all hover:-translate-y-1" href="#">
+                            View FAQ
+                        </a>
+</div>
+</div>
+</section>
+<!-- FAQ Teaser -->
+<section class="py-16 px-6 md:px-12 lg:px-20">
+<div class="max-w-[800px] mx-auto w-full">
+<div class="flex items-center gap-4 mb-8">
+<div class="h-px bg-gray-200 flex-1"></div>
+<h2 class="text-2xl font-bold text-primary">Common Questions</h2>
+<div class="h-px bg-gray-200 flex-1"></div>
+</div>
+<div class="space-y-4">
+<!-- FAQ Item 1 -->
+<details class="group bg-white rounded-2xl border border-gray-100 open:shadow-lg transition-shadow duration-300">
+<summary class="flex items-center justify-between p-6 cursor-pointer list-none text-lg font-bold text-primary">
+<span>How do I enroll in a course?</span>
+<span class="material-symbols-outlined transform group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-slate-600 leading-relaxed">
+                                Enrolling is easy! Simply navigate to our 'Courses' page, select the program that fits your needs, and click 'Enroll Now'. You'll be guided through a secure checkout process.
+                            </div>
+</details>
+<!-- FAQ Item 2 -->
+<details class="group bg-white rounded-2xl border border-gray-100 open:shadow-lg transition-shadow duration-300">
+<summary class="flex items-center justify-between p-6 cursor-pointer list-none text-lg font-bold text-primary">
+<span>Do you offer refunds?</span>
+<span class="material-symbols-outlined transform group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-slate-600 leading-relaxed">
+                                Yes, we offer a 30-day money-back guarantee on all our self-paced courses. If you're not satisfied with the content, simply reach out to our support team.
+                            </div>
+</details>
+<!-- FAQ Item 3 -->
+<details class="group bg-white rounded-2xl border border-gray-100 open:shadow-lg transition-shadow duration-300">
+<summary class="flex items-center justify-between p-6 cursor-pointer list-none text-lg font-bold text-primary">
+<span>Can I book a one-on-one session?</span>
+<span class="material-symbols-outlined transform group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-slate-600 leading-relaxed">
+                                Absolutely. Our expert consultants are available for personalized strategy sessions. Visit the 'Consultancy' page to view availability and book a slot.
+                            </div>
+</details>
+</div>
+</div>
+</section>
+</main>
+<!-- Social Footer -->
+<footer class="bg-primary text-white pt-16 pb-8 px-6 md:px-12 lg:px-20 rounded-t-[40px] mt-8 relative overflow-hidden">
+<!-- Organic shape overlay -->
+<div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-secondary via-accent to-secondary opacity-50"></div>
+<div class="max-w-[1200px] mx-auto w-full flex flex-col items-center">
+<h3 class="text-3xl font-hand mb-8 text-secondary rotate-[-2deg]">Follow Our Journey</h3>
+<div class="flex gap-8 mb-12 flex-wrap justify-center">
+<a class="group flex flex-col items-center gap-2" href="#">
+<div class="size-16 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-secondary group-hover:scale-110 transition-all duration-300">
+<!-- Instagram-ish icon -->
+<span class="material-symbols-outlined text-3xl">photo_camera</span>
+</div>
+<span class="text-sm font-medium opacity-60 group-hover:opacity-100">@CommerceEdu</span>
+</a>
+<a class="group flex flex-col items-center gap-2" href="#">
+<div class="size-16 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-[#0a66c2] group-hover:scale-110 transition-all duration-300">
+<!-- LinkedIn-ish icon -->
+<span class="material-symbols-outlined text-3xl">work</span>
+</div>
+<span class="text-sm font-medium opacity-60 group-hover:opacity-100">/company/edu</span>
+</a>
+<a class="group flex flex-col items-center gap-2" href="#">
+<div class="size-16 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-[#1da1f2] group-hover:scale-110 transition-all duration-300">
+<!-- Twitter-ish icon -->
+<span class="material-symbols-outlined text-3xl">chat</span>
+</div>
+<span class="text-sm font-medium opacity-60 group-hover:opacity-100">@Commerce_Tweets</span>
+</a>
+</div>
+<div class="w-full border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-300">
+<p>© 2023 CommerceEdu Inc. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

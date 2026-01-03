@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CommerceEdu - Course Catalog</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Nothing+You+Could+Do&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1f3b61",
+                        "secondary": "#e8904f",
+                        "accent": "#2d6a4f",
+                        "text-main": "#1a202c",
+                        "background-light": "#ffffff", // Request asked for pure white background
+                        "background-dark": "#14181e",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "hand": ['"Nothing You Could Do"', "cursive"], // Added for handwritten elements
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "2xl": "1.5rem", "full": "9999px"},
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'hover': '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>/* Custom scrollbar for sidebar */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px
+    }
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1
+    }
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px
+    }
+/* Organic rotate on hover */
+.card-hover-effect {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)
+    }
+.card-hover-effect:hover {
+    transform: translatey(-4px) rotate(1deg);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)
+    }
+/* Handwritten SVG Divider styling */
+.divider-path {
+    fill: none;
+    stroke: #cbd5e1;
+    stroke-width: 2;
+    stroke-linecap: round
+    }
+/* Custom Checkbox */
+.custom-checkbox:checked {
+    background-color: #2d6a4f;
+    border-color: #2d6a4f;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAFZftcK9D_04xBf99df99acDyYCeYIpkC5MkB4-aUwPr6uqm3GHSivhoSWcJAr9UNCsNE6M9dZW7V2wLzHrYCke74LppjdYgpt3heobEsqKifKEAfwmqo3j2CERtD6uxRSuDDlP8C8eZwa__a-FQ_AP0pgH5j3sRscld7D3UxUl9rVY-4VOFAFJ85k4Gw7VjSauzVojXjC7PZFzn0guF1pCtIfpjNkP-gI6uNBFFdJtbqqylIcB3hhcjGYmSghTOJpjAE6Y-1zD3g)
+    }</style>
+</head>
+<body class="bg-background-light min-h-screen flex flex-col font-display text-text-main overflow-x-hidden">
+<!-- Navbar -->
+<nav class="sticky top-0 z-50 w-full transition-all duration-300 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<!-- Logo -->
+<div class="flex items-center gap-3">
+<div class="relative w-10 h-10 flex items-center justify-center bg-primary rounded-lg text-white">
+<span class="material-symbols-outlined text-[28px]">school</span>
+</div>
+<span class="font-display font-bold text-xl tracking-tight text-primary">Commerce Edu</span>
+</div>
+<!-- Desktop Menu -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="homepage.html">Home</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="coursecatalog.html">Courses</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="consultancy.html">Consultancy</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="studymaterial.html">Study Materials</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="aboutus.html">About</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="contactus.html">Contact</a>
+
+</div>
+<!-- CTA -->
+<div class="hidden md:flex items-center gap-4">
+<a class="text-sm font-semibold text-primary hover:text-secondary transition-colors" href="login.html">Login</a>
+<a class="bg-primary text-white text-sm font-medium px-5 py-2.5 rounded-lg shadow-sm hover:bg-[#152a45] hover:shadow-md transition-all" href="signup.html">Get Started</a>
+</div>
+<!-- Mobile Menu Button -->
+<div class="md:hidden flex items-center">
+<button class="text-text-main">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<!-- Page Content Wrapper -->
+<div class="flex-1 max-w-[1440px] mx-auto w-full px-6 lg:px-12 py-8">
+<!-- Header Section -->
+<section class="mb-10">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 text-sm text-gray-500 mb-6 font-medium">
+<a class="hover:text-primary transition-colors" href="homepage.html">Home</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-text-main font-semibold">Courses</span>
+</nav>
+<!-- Title & Search Row -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="max-w-2xl">
+<h2 class="text-4xl md:text-5xl font-extrabold text-primary tracking-tight mb-3">Explore Our Courses</h2>
+<p class="text-lg text-gray-600 leading-relaxed">Master commerce with industry experts. From accounting basics to advanced corporate strategy, find the path that fits your career.</p>
+</div>
+<!-- Search Bar -->
+<div class="w-full md:w-[400px]">
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-gray-400 group-focus-within:text-primary transition-colors">search</span>
+</div>
+<input class="block w-full pl-12 pr-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-text-main placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all shadow-sm" placeholder="Search for courses, topics..." type="text"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Layout: Sidebar + Grid -->
+<div class="flex flex-col lg:flex-row gap-10">
+<!-- Sidebar Filters (25%) -->
+<aside class="w-full lg:w-1/4 flex-shrink-0">
+<div class="sticky top-24 space-y-8 pr-2">
+<div class="flex items-center justify-between">
+<h3 class="font-bold text-lg text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">tune</span> Filters
+                        </h3>
+<button class="text-sm text-secondary font-medium hover:underline hover:text-orange-600">Reset All</button>
+</div>
+<!-- Organic Divider -->
+<svg class="w-full h-3 overflow-visible" preserveaspectratio="none">
+<path class="divider-path" d="M0,1 Q100,5 200,1 T400,1" vector-effect="non-scaling-stroke"></path>
+</svg>
+<!-- Filter Groups -->
+<div class="space-y-6">
+<!-- Categories -->
+<details class="group" open="">
+<summary class="flex justify-between items-center cursor-pointer list-none mb-3">
+<span class="font-bold text-text-main">Category</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180 text-gray-400">expand_more</span>
+</summary>
+<div class="space-y-3 pl-1">
+<label class="flex items-center gap-3 cursor-pointer group/item">
+<input class="custom-checkbox w-5 h-5 rounded border-gray-300 text-accent focus:ring-accent transition-colors" type="checkbox"/>
+<span class="text-gray-600 group-hover/item:text-primary transition-colors">Accounting</span>
+<span class="text-xs text-gray-400 ml-auto">(120)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/item">
+<input class="custom-checkbox w-5 h-5 rounded border-gray-300 text-accent focus:ring-accent transition-colors" type="checkbox"/>
+<span class="text-gray-600 group-hover/item:text-primary transition-colors">Finance</span>
+<span class="text-xs text-gray-400 ml-auto">(85)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/item">
+<input class="custom-checkbox w-5 h-5 rounded border-gray-300 text-accent focus:ring-accent transition-colors" type="checkbox"/>
+<span class="text-gray-600 group-hover/item:text-primary transition-colors">Economics</span>
+<span class="text-xs text-gray-400 ml-auto">(42)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/item">
+<input class="custom-checkbox w-5 h-5 rounded border-gray-300 text-accent focus:ring-accent transition-colors" type="checkbox"/>
+<span class="text-gray-600 group-hover/item:text-primary transition-colors">Business Law</span>
+<span class="text-xs text-gray-400 ml-auto">(30)</span>
+</label>
+</div>
+</details>
+<!-- Organic Divider -->
+<svg class="w-full h-2 overflow-visible opacity-50" preserveaspectratio="none">
+<path class="divider-path" d="M0,1 Q50,4 100,1 T300,2" vector-effect="non-scaling-stroke"></path>
+</svg>
+<!-- Level -->
+<details class="group" open="">
+<summary class="flex justify-between items-center cursor-pointer list-none mb-3">
+<span class="font-bold text-text-main">Level</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180 text-gray-400">expand_more</span>
+</summary>
+<div class="space-y-3 pl-1">
+<label class="flex items-center gap-3 cursor-pointer group/item">
+<input class="custom-checkbox w-5 h-5 rounded border-gray-300 text-accent focus:ring-accent transition-colors" type="checkbox"/>
+<span class="text-gray-600 group-hover/item:text-primary transition-colors">Beginner</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/item">
+<input class="custom-checkbox w-5 h-5 rounded border-gray-300 text-accent focus:ring-accent transition-colors" type="checkbox"/>
+<span class="text-gray-600 group-hover/item:text-primary transition-colors">Intermediate</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/item">
+<input class="custom-checkbox w-5 h-5 rounded border-gray-300 text-accent focus:ring-accent transition-colors" type="checkbox"/>
+<span class="text-gray-600 group-hover/item:text-primary transition-colors">Advanced</span>
+</label>
+</div>
+</details>
+<!-- Organic Divider -->
+<svg class="w-full h-2 overflow-visible opacity-50" preserveaspectratio="none">
+<path class="divider-path" d="M0,1 Q50,4 100,1 T300,2" vector-effect="non-scaling-stroke"></path>
+</svg>
+<!-- Price -->
+<details class="group">
+<summary class="flex justify-between items-center cursor-pointer list-none mb-3">
+<span class="font-bold text-text-main">Price</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180 text-gray-400">expand_more</span>
+</summary>
+<div class="space-y-3 pl-1">
+<label class="flex items-center gap-3 cursor-pointer group/item">
+<input class="custom-checkbox w-5 h-5 rounded border-gray-300 text-accent focus:ring-accent transition-colors" type="checkbox"/>
+<span class="text-gray-600 group-hover/item:text-primary transition-colors">Free</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/item">
+<input class="custom-checkbox w-5 h-5 rounded border-gray-300 text-accent focus:ring-accent transition-colors" type="checkbox"/>
+<span class="text-gray-600 group-hover/item:text-primary transition-colors">Under ₹500</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/item">
+<input class="custom-checkbox w-5 h-5 rounded border-gray-300 text-accent focus:ring-accent transition-colors" type="checkbox"/>
+<span class="text-gray-600 group-hover/item:text-primary transition-colors">₹500 - ₹2000</span>
+</label>
+</div>
+</details>
+<!-- Rating -->
+<details class="group">
+<summary class="flex justify-between items-center cursor-pointer list-none mb-3">
+<span class="font-bold text-text-main">Rating</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180 text-gray-400">expand_more</span>
+</summary>
+<div class="space-y-3 pl-1">
+<label class="flex items-center gap-3 cursor-pointer group/item">
+<input class="custom-checkbox w-5 h-5 rounded border-gray-300 text-accent focus:ring-accent transition-colors" type="checkbox"/>
+<div class="flex items-center text-yellow-500">
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] text-gray-300">star</span>
+<span class="ml-2 text-sm text-gray-600">&amp; Up</span>
+</div>
+</label>
+</div>
+</details>
+</div>
+</div>
+</aside>
+<!-- Main Course Grid (75%) -->
+<main class="w-full lg:w-3/4">
+<!-- Sort & View Options -->
+<div class="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4 bg-gray-50 p-4 rounded-xl border border-gray-200 border-dashed">
+<p class="text-gray-600 text-sm font-medium">Showing <span class="text-text-main font-bold">245</span> courses</p>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<span class="text-sm text-gray-500">Sort by:</span>
+<div class="relative">
+<select class="appearance-none bg-white border border-gray-300 text-text-main text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 pr-8 cursor-pointer font-medium">
+<option>Most Popular</option>
+<option>Newest</option>
+<option>Price: Low to High</option>
+<option>Rating</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</div>
+</div>
+<div class="flex bg-white rounded-lg border border-gray-200 p-1">
+<button class="p-1.5 rounded bg-gray-100 text-primary hover:bg-gray-200 transition">
+<span class="material-symbols-outlined text-[20px]">grid_view</span>
+</button>
+<button class="p-1.5 rounded text-gray-400 hover:text-gray-600 hover:bg-gray-50 transition">
+<span class="material-symbols-outlined text-[20px]">view_list</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Course Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+<!-- Card 1 -->
+<div class="group bg-white rounded-2xl border border-gray-100 overflow-hidden card-hover-effect flex flex-col h-full relative">
+<!-- Handmade Tag -->
+<div class="absolute top-3 left-3 z-10">
+<div class="bg-secondary text-white text-xs font-bold px-3 py-1 rounded-md shadow-sm -rotate-2 font-hand tracking-wide">
+                                Bestseller
+                             </div>
+</div>
+<!-- Wishlist -->
+<button class="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center bg-white/80 backdrop-blur-sm rounded-full text-gray-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<!-- Thumbnail -->
+<div class="relative aspect-video overflow-hidden bg-gray-200">
+<img alt="Financial Analysis Charts" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Close up of financial charts and graphs on a tablet" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP3Q4fe6CKlUUTls8fUyxJQlBUy_CANbulHjVXkDJUesb3lWAzmQEUnRuU9rD02KDPu0m8oHghhC9uFhFeAIF67jMYmSMnoaDODg2aioGKnkA8L5PIcH71AjWMnS-Kfyn-W0Lh6pbBoOgtbWQTToo3PYsY6QB3JGCU6dp0uyNPdDNH0Fj9q6Y5b_gIVtuE3F_SA8j_1ikdo-EnPD5FfEnrl482HjhH2yRyUhonL72Ev8pjHmZJYvBs3W8QfAMyqtUwVsU0pIcIoKc"/>
+</div>
+<!-- Content -->
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex items-center gap-2 mb-2">
+<span class="text-[10px] font-bold uppercase tracking-wider text-accent bg-accent/10 px-2 py-0.5 rounded-sm">Finance</span>
+<span class="flex items-center text-xs text-gray-500 gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 12h 30m
+                                </span>
+</div>
+<h3 class="text-lg font-bold text-primary mb-2 line-clamp-2 group-hover:text-secondary transition-colors">Advanced Corporate Finance &amp; Valuation</h3>
+<!-- Instructor -->
+<div class="flex items-center gap-2 mb-4 mt-auto pt-2">
+<img alt="Instructor" class="w-6 h-6 rounded-full object-cover" data-alt="Portrait of a male instructor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2tAeJ89E9wZuTb8_Xq4iIOeGF6IBFLLCJU7S8goVlmGAFeYqXyRJXZVegWMqAIoZMFGSQ0cze3uFC7eQsfP3xMUKghjgmXpLGQhu9QNSHN17MhnrjUXzibElcpX6BQJnKJYIvQ-q3pHT2EUK94bWJ5dMepo2zGgAfLCkpuYjALyvUX5AN7pXuf-O_oZCgDk1DMHzrYEQGkmPSauBYEALU-Ptkcv3P8wAinTzA0xQzM7xpNJzi827gcrMrWA-hICiS2MJ36WwoUGE"/>
+<span class="text-sm text-gray-600 font-medium">Dr. Arjun Mehta</span>
+</div>
+<!-- Rating -->
+<div class="flex items-center gap-1 mb-4">
+<span class="text-yellow-500 material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="font-bold text-sm text-text-main">4.8</span>
+<span class="text-xs text-gray-400">(1,240 reviews)</span>
+</div>
+<!-- Footer -->
+<div class="flex items-center justify-between border-t border-dashed border-gray-200 pt-3">
+<div class="flex flex-col">
+<span class="text-xs text-gray-400 line-through">₹2,499</span>
+<span class="text-lg font-bold text-text-main">₹1,199</span>
+</div>
+<button class="text-sm font-bold text-primary hover:text-secondary flex items-center gap-1 transition-colors">
+                                    <a href="coursedetails.html">View Details </a>
+                                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-white rounded-2xl border border-gray-100 overflow-hidden card-hover-effect flex flex-col h-full relative">
+<div class="absolute top-3 left-3 z-10">
+<div class="bg-accent text-white text-xs font-bold px-3 py-1 rounded-md shadow-sm rotate-1 font-hand tracking-wide">
+                               New
+                            </div>
+</div>
+<button class="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center bg-white/80 backdrop-blur-sm rounded-full text-gray-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<div class="relative aspect-video overflow-hidden bg-gray-200">
+<img alt="Marketing Strategy Planning" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Flat lay of marketing strategy sticky notes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCm6l_HthKNzs9v0KIZaQZfvDn1WPMGp8U1VWJdkJoQq5ueeXAkeGCQhGw5B2cuTqStfE8bxXn4ClzZYBdhV1Rcytu8zA06Uy5gkcfRkQ4-Qo2zcbj2BMWf-i-vFGDUyVPis-CtOzJluva4rpE3SYxREUvok5VXIgylYI6a-WYgQLaqex2CEOcPcD0tZi2kx1pkQ0SJWvg5dogo4FGZydemYpKsRPFF3OUoRyQ13Z2i8GbZbqzLW3TBpGOXuUl1nAXa_tq0i_vJdvo"/>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex items-center gap-2 mb-2">
+<span class="text-[10px] font-bold uppercase tracking-wider text-purple-700 bg-purple-100 px-2 py-0.5 rounded-sm">Marketing</span>
+<span class="flex items-center text-xs text-gray-500 gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 6h 15m
+                                </span>
+</div>
+<h3 class="text-lg font-bold text-primary mb-2 line-clamp-2 group-hover:text-secondary transition-colors">Digital Marketing Masterclass 2024</h3>
+<div class="flex items-center gap-2 mb-4 mt-auto pt-2">
+<img alt="Instructor" class="w-6 h-6 rounded-full object-cover" data-alt="Portrait of a female instructor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG1-RqMDuoukVf28nxR8aVHLULvrencjk35Jzcnj2iBVx9lXDWOFs5SWxK11Jzm7r0LV5FhFrCaghVn1KFg8rJeI_8kHbpjaD0Od2C_yaw5AtqR7XldKDST98WiKISfDqrNrGHDNKkYQCH72-6JRtXxxG2fSzzUaOUC64yazL3LdCREmSbbt2awESoodNjapURvt9UiQCqZpwVQvh5ZCwxMzE2uUxkoFevigYMq4EwujaYtviu7jfXqwg6HDy7Y0zi5VKaPsBZv9o"/>
+<span class="text-sm text-gray-600 font-medium">Sarah Jenkins</span>
+</div>
+<div class="flex items-center gap-1 mb-4">
+<span class="text-yellow-500 material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="font-bold text-sm text-text-main">4.6</span>
+<span class="text-xs text-gray-400">(850 reviews)</span>
+</div>
+<div class="flex items-center justify-between border-t border-dashed border-gray-200 pt-3">
+<div class="flex flex-col">
+<span class="text-xs text-gray-400 opacity-0 h-4"></span>
+<span class="text-lg font-bold text-text-main">₹899</span>
+</div>
+<button class="text-sm font-bold text-primary hover:text-secondary flex items-center gap-1 transition-colors">
+                                    View Details 
+                                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-white rounded-2xl border border-gray-100 overflow-hidden card-hover-effect flex flex-col h-full relative">
+<button class="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center bg-white/80 backdrop-blur-sm rounded-full text-gray-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<div class="relative aspect-video overflow-hidden bg-gray-200">
+<img alt="Business Meeting" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Three people shaking hands in a business meeting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcnBGdLSQRfYPc-HL28S1-M4iAAZJVxvwvO_Bncy-5a7I1n21CCemCGqnJfFH7MUjBBzwfI3kft1insdtle61ehdf2OkL4Sx6zhOGrmDgRK9MOtSww-HP40cg2rQFx3NZG281qj52PwQ1iiA47-skbJ_DYEJRwWhtxjGeL4LULC4f8RNY6Nt9RgU_YWH7K8XIDiVzz5Vweo0QvG_pQ3v8tan6Sly6ayil6wYrwFE_zZlrfQ7cB2ZxLCEJ2c--QlFb3TXlUiTikB6M"/>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex items-center gap-2 mb-2">
+<span class="text-[10px] font-bold uppercase tracking-wider text-blue-700 bg-blue-100 px-2 py-0.5 rounded-sm">Business</span>
+<span class="flex items-center text-xs text-gray-500 gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 18h
+                                </span>
+</div>
+<h3 class="text-lg font-bold text-primary mb-2 line-clamp-2 group-hover:text-secondary transition-colors">Complete MBA Course: Strategy &amp; Operations</h3>
+<div class="flex items-center gap-2 mb-4 mt-auto pt-2">
+<img alt="Instructor" class="w-6 h-6 rounded-full object-cover" data-alt="Portrait of male instructor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3h0-_sG8G5q18AWuVWgQgEZRCWUkJ-tbdtMFWydHFQx8VfEPInPuEwM4scaBWnvqFG2E2SZ1KF3JSzX2kAxQkC2rssIA2ZKp7XrBKLP9aQWE05szXDDluzqILW1eWfnOSHft7skTqpcAm6mkIewpVv5PzJm9Gc5-4RGvRQaNHewj4QlyCc0s9j0sCYGmpFdgDUaucLtGqbcDePFU8-vQ2RvAjFkZzfhWKIzAEWJu6nnXc4Yl0Gxu370AYHxr3o6KyGkdHE8oLmP8"/>
+<span class="text-sm text-gray-600 font-medium">David Chen</span>
+</div>
+<div class="flex items-center gap-1 mb-4">
+<span class="text-yellow-500 material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="font-bold text-sm text-text-main">4.9</span>
+<span class="text-xs text-gray-400">(2,100 reviews)</span>
+</div>
+<div class="flex items-center justify-between border-t border-dashed border-gray-200 pt-3">
+<div class="flex flex-col">
+<span class="text-xs text-gray-400 line-through">₹3,999</span>
+<span class="text-lg font-bold text-text-main">₹1,999</span>
+</div>
+<button class="text-sm font-bold text-primary hover:text-secondary flex items-center gap-1 transition-colors">
+                                    View Details 
+                                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Featured Banner (Interrupt) -->
+<div class="relative w-full bg-[#152a45] rounded-3xl p-8 mb-12 overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
+<!-- Abstract Background Shapes -->
+<div class="absolute top-0 right-0 w-2/3 h-full opacity-10 pointer-events-none">
+<svg class="w-full h-full text-secondary fill-current" viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<path d="M44.7,-76.4C58.9,-69.2,71.8,-59.1,81.6,-46.6C91.4,-34.1,98.2,-19.2,95.8,-4.9C93.4,9.4,81.8,23.1,71.6,35.6C61.4,48.1,52.6,59.4,41.4,67.6C30.2,75.8,16.6,80.9,2.2,77.1C-12.2,73.3,-27.4,60.6,-41.2,50.1C-55,39.6,-67.4,31.3,-75.4,19.3C-83.4,7.3,-87,-8.4,-82.6,-22.3C-78.2,-36.2,-65.8,-48.3,-52.7,-55.8C-39.6,-63.3,-25.8,-66.2,-12.3,-68.1C1.2,-70,14.7,-70.9,30.5,-83.6L44.7,-76.4Z" transform="translate(100 100)"></path>
+</svg>
+</div>
+<div class="relative z-10 max-w-lg">
+<div class="inline-block bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full mb-3 shadow-md">Limited Time Offer</div>
+<h3 class="text-3xl font-extrabold text-white mb-2">Summer Learning Festival</h3>
+<p class="text-gray-300 mb-6">Get 50% off on all Finance and Economics bundles. Upgrade your skills for the new fiscal year.</p>
+<button class="bg-white text-primary px-6 py-3 rounded-xl font-bold hover:bg-gray-100 transition-colors shadow-lg">View Bundles</button>
+</div>
+<div class="relative z-10 hidden md:block pr-10">
+<!-- Hand drawn arrow simulation -->
+<div class="relative">
+<div class="text-white text-center font-hand text-xl rotate-6 mb-2">Don't miss out!</div>
+<svg class="w-20 h-16 text-white rotate-[30deg]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19 14l-7 7m0 0l-7-7m7 7V3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</div>
+</div>
+</div>
+<!-- Course Cards Grid Row 2 -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+<!-- Card 4 -->
+<div class="group bg-white rounded-2xl border border-gray-100 overflow-hidden card-hover-effect flex flex-col h-full relative">
+<button class="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center bg-white/80 backdrop-blur-sm rounded-full text-gray-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<div class="relative aspect-video overflow-hidden bg-gray-200">
+<img alt="Accounting Books" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Person working on accounting books with calculator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb_CFN3wvErdakuKpWMWcqgikw5FYO24edZIPrmCHitUf4ilXIlfUsnd6bY8hzOw93lxC8lOcPIVyHkqToff_pVn3nmjsNZIIlpSpMcGtlkEE9w33eX-P0AWdza5vTpZiXSdIYYZXEyQ_a3dftLLwynAh07F91pp2a7JaIydOHCez2CeePOnXPB9VhzZnkuz7fL7y3jUcJX-pQv-2zEFdcSXMTX_A-NKb6PNpRYUfyO_Yuh2MFJf4EptZn0qFYnyS9GzzFQgc-hMY"/>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex items-center gap-2 mb-2">
+<span class="text-[10px] font-bold uppercase tracking-wider text-green-700 bg-green-100 px-2 py-0.5 rounded-sm">Accounting</span>
+<span class="flex items-center text-xs text-gray-500 gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 22h
+                                </span>
+</div>
+<h3 class="text-lg font-bold text-primary mb-2 line-clamp-2 group-hover:text-secondary transition-colors">Certified Professional Accountant Prep</h3>
+<div class="flex items-center gap-2 mb-4 mt-auto pt-2">
+<img alt="Instructor" class="w-6 h-6 rounded-full object-cover" data-alt="Portrait of female instructor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApuQsY3uxeJzikcMhmXY1b_DR_4qKmYlwhrDN2u07iJbPEuVKbJFlfXbUkQYQVV8mEsDPYXdkuyy3luCM0RAo49nliKqNCSN0ZBI58jr_4NPPXsl-KeqklxNvnCCowr4EBnQR38S1mW3Mlpeal36cXqR2DNhZAZmy_cYm3HvFQ4q1McEyYwdACTfYutawUcoPNzIbuUl6eqqN3KaEyHpnv2MSFQ4r1xyQDa4RDFv7HDAI3Gv9KVm2ib9cIf6VE2xAStuhdhWOlVZU"/>
+<span class="text-sm text-gray-600 font-medium">Emily White</span>
+</div>
+<div class="flex items-center gap-1 mb-4">
+<span class="text-yellow-500 material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="font-bold text-sm text-text-main">4.7</span>
+<span class="text-xs text-gray-400">(512 reviews)</span>
+</div>
+<div class="flex items-center justify-between border-t border-dashed border-gray-200 pt-3">
+<div class="flex flex-col">
+<span class="text-xs text-gray-400 line-through">₹5,000</span>
+<span class="text-lg font-bold text-text-main">₹3,500</span>
+</div>
+<button class="text-sm font-bold text-primary hover:text-secondary flex items-center gap-1 transition-colors">
+                                    View Details 
+                                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="group bg-white rounded-2xl border border-gray-100 overflow-hidden card-hover-effect flex flex-col h-full relative">
+<div class="absolute top-3 left-3 z-10">
+<div class="bg-gray-800 text-white text-xs font-bold px-3 py-1 rounded-md shadow-sm -rotate-1 font-hand tracking-wide">
+                               Free
+                            </div>
+</div>
+<button class="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center bg-white/80 backdrop-blur-sm rounded-full text-gray-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<div class="relative aspect-video overflow-hidden bg-gray-200">
+<img alt="Stock Market Screen" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Digital display of stock market data" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDWYNb7TE7Q9ebaS5Gi8exVOiLu6BwlCCJ4dfieB8PqVtKIETwK8UoLYZts02XZ8YD_sdKrSXkuyjnG3nAh5mUENxyUokNsch7v2GJNC4s_cQt9FuOXIpKk6XaDCmT5pQ3VbuXOmrGM8UiKaF3XkJY5Vrfd-uLEqCpRQaDKR8f1GUA3zCaISijnc_B6ZFheSOYexEwZaPLSviN9QValz6hDrrm9wItcL0ZpHBHoDA8zzRjVLllmlpRRuunjQ9Z_cbCW-qjI4q5BYU"/>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex items-center gap-2 mb-2">
+<span class="text-[10px] font-bold uppercase tracking-wider text-accent bg-accent/10 px-2 py-0.5 rounded-sm">Finance</span>
+<span class="flex items-center text-xs text-gray-500 gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 2h
+                                </span>
+</div>
+<h3 class="text-lg font-bold text-primary mb-2 line-clamp-2 group-hover:text-secondary transition-colors">Intro to Personal Investing</h3>
+<div class="flex items-center gap-2 mb-4 mt-auto pt-2">
+<img alt="Instructor" class="w-6 h-6 rounded-full object-cover" data-alt="Portrait of male instructor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk47Ghn6uKN0IEZ1pfibpYF150b5KQphiIX42O2j19j5kPoxlC6hjVU_mzdBnwFU_SupiCLspqvLGkevUaRQc9bMRyhevO4eEiJtnMcVLIB88pL84TLv_T_81TTnsrRZM3H5S6s3LrykIRstwlXEZV3RV7veTtwFBF25S-IH2w_a1BW5k9pUoY4XUE5Si0lDESqyaco2aM2Uj7thfBE4YcP099k-CB974jrGeT-JRNjw-b0_fRTJuJMr33kyZYyJ178GWgaJPJ5YU"/>
+<span class="text-sm text-gray-600 font-medium">Michael Ross</span>
+</div>
+<div class="flex items-center gap-1 mb-4">
+<span class="text-yellow-500 material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="font-bold text-sm text-text-main">4.5</span>
+<span class="text-xs text-gray-400">(3.2k reviews)</span>
+</div>
+<div class="flex items-center justify-between border-t border-dashed border-gray-200 pt-3">
+<div class="flex flex-col">
+<span class="text-xs text-gray-400 opacity-0 h-4"></span>
+<span class="text-lg font-bold text-secondary">Free</span>
+</div>
+<button class="text-sm font-bold text-primary hover:text-secondary flex items-center gap-1 transition-colors">
+                                    View Details 
+                                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="group bg-white rounded-2xl border border-gray-100 overflow-hidden card-hover-effect flex flex-col h-full relative">
+<button class="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center bg-white/80 backdrop-blur-sm rounded-full text-gray-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<div class="relative aspect-video overflow-hidden bg-gray-200">
+<img alt="Team Collaboration" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Group of people putting hands together in a circle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRCAysXAkAsLhhqwmcS1YecR0uxqaZOg4pr45spW6qOWfqrFJ5RlGUmfELTAAEBvnDp7pZLxO3UQvrg_XZ_WIoHqdjgIfSQaSy_5QMZBYDVZ4DUKCEb_ZOuw_qto4f2tCSadJnC8rsM6ohK6oHqp7L9wrY0UHdrGY0O7Px5b1fHlzN1eqkeeSk0z0GBHHyMFkulrBLDjGISanDj_WM-rrx5LYEFe5YwUDytMVE9ZYfq1blnuKNI4R1I6SrHMwKrLZG9C8CqnAN364"/>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex items-center gap-2 mb-2">
+<span class="text-[10px] font-bold uppercase tracking-wider text-pink-700 bg-pink-100 px-2 py-0.5 rounded-sm">HR</span>
+<span class="flex items-center text-xs text-gray-500 gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 8h 45m
+                                </span>
+</div>
+<h3 class="text-lg font-bold text-primary mb-2 line-clamp-2 group-hover:text-secondary transition-colors">Human Resource Management Essentials</h3>
+<div class="flex items-center gap-2 mb-4 mt-auto pt-2">
+<img alt="Instructor" class="w-6 h-6 rounded-full object-cover" data-alt="Portrait of male instructor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq_-Z1rBITitSId88_-snPelGEJpSIJjMuz8nkQOGfuc1BhFsuIgbPWW6Cpq8XnzIyv68GlCdx171a65eAKWaE4rrsh_i8E0EKW0KKRhp5_9XPNEqgWfFLsEK_5aySNBejnyqynJjTxIt1oxS2BCa5boP-v4prCEZOA7cq05TGeGOBAJul0udW_57iKp1c8m6wT8kE7vWKmTI8IWGv6HmXjA7nzMPGfyQCLbhWx1Ww4iAlL8CsBlxK_dkBelbv4IMoPz38z48VUQ8"/>
+<span class="text-sm text-gray-600 font-medium">Robert Fox</span>
+</div>
+<div class="flex items-center gap-1 mb-4">
+<span class="text-yellow-500 material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="font-bold text-sm text-text-main">4.4</span>
+<span class="text-xs text-gray-400">(220 reviews)</span>
+</div>
+<div class="flex items-center justify-between border-t border-dashed border-gray-200 pt-3">
+<div class="flex flex-col">
+<span class="text-xs text-gray-400 line-through">₹1,500</span>
+<span class="text-lg font-bold text-text-main">₹1,200</span>
+</div>
+<button class="text-sm font-bold text-primary hover:text-secondary flex items-center gap-1 transition-colors">
+                                    View Details 
+                                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex flex-col items-center gap-6 mt-16 mb-8">
+<button class="bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full font-bold transition-all shadow-sm hover:shadow-md transform hover:-translate-y-1">
+                        Load More Courses
+                    </button>
+<p class="text-gray-400 text-sm">Showing 6 of 245 courses</p>
+</div>
+</main>
+</div>
+</div>
+<!-- Simple Footer (For context) -->
+<footer class="bg-white border-t border-gray-200 mt-12 py-10">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12 text-center text-gray-500 text-sm">
+            © 2024 CommerceEdu. All rights reserved.
+        </div>
+</footer>
+<!-- Scroll to top -->
+<div class="fixed bottom-8 right-8 z-50">
+<button class="bg-primary text-white p-3 rounded-full shadow-lg hover:bg-secondary transition-colors group">
+<span class="material-symbols-outlined group-hover:-translate-y-1 transition-transform">arrow_upward</span>
+</button>
+</div>
+</body></html>

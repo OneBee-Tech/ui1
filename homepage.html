@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Commerce Edu - Master Commerce</title>
+<!-- Fonts: Inter for Body, Lora for Headings to add the "handcrafted/academic" feel -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1e3a5f",       // Deep Blue
+                        "secondary": "#e8904f",     // Warm Orange
+                        "accent": "#2d6a4f",        // Green
+                        "text-main": "#1a202c",     // Dark Text
+                        "background-light": "#ffffff",
+                        "background-off": "#f8f9fa",
+                        "background-dark": "#14181e",
+                    },
+                    fontFamily: {
+                        "display": ["Lora", "serif"],
+                        "body": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem", 
+                        "lg": "0.5rem", 
+                        "xl": "0.75rem", 
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'hover': '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.01)',
+                    },
+                    backgroundImage: {
+                        'noise': "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.05%22/%3E%3C/svg%3E')",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for better feel */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Hand-drawn underline animation */
+        .hand-underline {
+            position: relative;
+            display: inline-block;
+        }
+        .hand-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: url("data:image/svg+xml,%3Csvg width='200' height='9' viewBox='0 0 200 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.00026 6.99997C48.3584 3.23898 116.353 -1.25997 197.5 4.99999' stroke='%23e8904f' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center;
+            background-size: 100% 100%;
+            z-index: -1;
+        }
+
+        /* Subtle float animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-background-light font-body text-text-main antialiased relative">
+<!-- Noise Texture Overlay -->
+<div class="fixed inset-0 pointer-events-none opacity-40 z-0 bg-noise"></div>
+<!-- Navigation Bar -->
+<nav class="sticky top-0 z-50 w-full transition-all duration-300 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<!-- Logo -->
+<div class="flex items-center gap-3">
+<div class="relative w-10 h-10 flex items-center justify-center bg-primary rounded-lg text-white">
+<span class="material-symbols-outlined text-[28px]">school</span>
+</div>
+<span class="font-display font-bold text-xl tracking-tight text-primary">Commerce Edu</span>
+</div>
+<!-- Desktop Menu -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="homepage.html">Home</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="coursecatalog.html">Courses</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="consultancy.html">Consultancy</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="studymaterial.html">Study Materials</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="aboutus.html">About</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="contactus.html">Contact</a>
+
+</div>
+<!-- CTA -->
+<div class="hidden md:flex items-center gap-4">
+<a class="text-sm font-semibold text-primary hover:text-secondary transition-colors" href="login.html">Login</a>
+<a class="bg-primary text-white text-sm font-medium px-5 py-2.5 rounded-lg shadow-sm hover:bg-[#152a45] hover:shadow-md transition-all" href="signup.html">Get Started</a>
+</div>
+<!-- Mobile Menu Button -->
+<div class="md:hidden flex items-center">
+<button class="text-text-main">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative pt-16 pb-24 lg:pt-24 lg:pb-32 overflow-hidden z-10">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+<!-- Content -->
+<div class="flex-1 text-center lg:text-left space-y-8 relative">
+<!-- Decorative element -->
+<div class="hidden lg:block absolute -top-10 -left-10 text-secondary opacity-20">
+<span class="material-symbols-outlined text-[100px] rotate-[-15deg]">auto_stories</span>
+</div>
+<h1 class="font-display font-bold text-5xl lg:text-[64px] leading-[1.1] text-primary tracking-tight">
+                        Master Commerce. <br/>
+<span class="hand-underline relative z-10">Build Your Future.</span>
+</h1>
+<p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light">
+                        Unlock your potential with expert-led courses and personalized mentorship designed specifically for the next generation of business leaders.
+                    </p>
+<div class="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+<a class="bg-primary hover:bg-[#152a45] text-white px-8 py-3.5 rounded-lg font-medium shadow-soft hover:shadow-hover transition-all transform hover:-translate-y-0.5" href="#courses">
+                            Browse Courses
+                        </a>
+<a class="group flex items-center gap-2 px-8 py-3.5 rounded-lg font-medium border-2 border-secondary text-primary hover:bg-secondary/10 transition-all" href="#consultancy">
+                            Book Consultation
+                            <span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="pt-6 flex items-center justify-center lg:justify-start gap-6 text-sm text-gray-500">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent">check_circle</span>
+<span>Certified Mentors</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent">check_circle</span>
+<span>Lifetime Access</span>
+</div>
+</div>
+</div>
+<!-- Image -->
+<div class="flex-1 w-full relative group">
+<!-- Abstract blob background -->
+<div class="absolute inset-0 bg-secondary/10 rounded-[60%_40%_30%_70%/60%_30%_70%_40%] blur-3xl scale-90 group-hover:scale-95 transition-transform duration-700"></div>
+<div class="relative rounded-2xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500 ease-out">
+<div class="aspect-[4/3] w-full bg-gray-200 relative">
+<!-- Image representing diverse students studying -->
+<img alt="Group of diverse commerce students collaborating in a library with natural light" class="object-cover w-full h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkgkCpjhkJsJrlguAuXMW7u6s3aVx4fGidC8YVb9ltydspeUOBNzvnJxOUjUpkRUnr8blybfG6y5PV16jOvn4fRy7fy3rxkXHuxK_B_wzCmCP0uGeMqAQsg-NBl5emYX2IFDLMXG3WfjPqpctsOBHE-DS4LHI91_7A2Odn0b0H8KJt_qlqxV7o12V37CmDzQqPfFJoGUQqWXilnha3REk8xIep5J9xFvA-JBR2qNPW5_bKovDX0nxi0vdsmL_eJzxJWF5V2X6gbRQ"/>
+</div>
+<!-- Floating Badge -->
+<div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur px-5 py-3 rounded-xl shadow-lg animate-float">
+<div class="flex items-center gap-3">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full bg-gray-300 border-2 border-white bg-[url('https://randomuser.me/api/portraits/women/44.jpg')] bg-cover"></div>
+<div class="w-8 h-8 rounded-full bg-gray-300 border-2 border-white bg-[url('https://randomuser.me/api/portraits/men/32.jpg')] bg-cover"></div>
+<div class="w-8 h-8 rounded-full bg-gray-300 border-2 border-white bg-[url('https://randomuser.me/api/portraits/women/68.jpg')] bg-cover"></div>
+</div>
+<div class="flex flex-col">
+<span class="font-bold text-primary text-sm">12k+ Students</span>
+<span class="text-xs text-gray-500">Joined this month</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Value Proposition -->
+<section class="py-24 bg-background-off relative z-10">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Text Header -->
+<div class="lg:col-span-4 sticky top-24">
+<span class="text-secondary font-display font-semibold text-lg italic mb-2 block">Why Choose Us</span>
+<h2 class="font-display font-bold text-3xl lg:text-4xl text-primary mb-6 leading-tight">
+                        We bring a <span class="relative inline-block text-accent">human touch<svg class="absolute w-full h-3 -bottom-1 left-0 text-accent/20" preserveaspectratio="none" viewbox="0 0 100 10"><path d="M0 5 Q 50 10 100 5" fill="none" stroke="currentColor" stroke-width="3"></path></svg></span> to commerce education.
+                    </h2>
+<p class="text-gray-600 mb-8 leading-relaxed">
+                        Forget robotic lectures. Our curriculum is built around real-world application, mentorship, and community growth.
+                    </p>
+<a class="text-primary font-semibold hover:text-secondary transition-colors inline-flex items-center gap-2" href="#">
+                        Read our mission
+                        <span class="material-symbols-outlined text-lg">arrow_right_alt</span>
+</a>
+</div>
+<!-- Staggered Cards -->
+<div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Card 1 -->
+<div class="bg-white p-8 rounded-2xl shadow-soft hover:shadow-hover transition-all md:translate-y-0 border border-gray-100/50">
+<div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6 text-primary rotate-3">
+<span class="material-symbols-outlined text-3xl">school</span>
+</div>
+<h3 class="font-display font-bold text-xl text-primary mb-3">Expert Mentors</h3>
+<p class="text-gray-600 text-sm leading-relaxed">
+                            Learn directly from industry veterans who have shaped the market. No purely academic theories—just real experience.
+                        </p>
+</div>
+<!-- Card 2 (Staggered down) -->
+<div class="bg-white p-8 rounded-2xl shadow-soft hover:shadow-hover transition-all md:translate-y-12 border border-gray-100/50">
+<div class="w-14 h-14 bg-green-50 rounded-full flex items-center justify-center mb-6 text-accent -rotate-2">
+<span class="material-symbols-outlined text-3xl">candlestick_chart</span>
+</div>
+<h3 class="font-display font-bold text-xl text-primary mb-3">Real-World Focus</h3>
+<p class="text-gray-600 text-sm leading-relaxed">
+                            Curriculum designed around current case studies from Fortune 500 companies. Apply what you learn immediately.
+                        </p>
+</div>
+<!-- Card 3 -->
+<div class="bg-white p-8 rounded-2xl shadow-soft hover:shadow-hover transition-all md:translate-y-6 border border-gray-100/50">
+<div class="w-14 h-14 bg-orange-50 rounded-full flex items-center justify-center mb-6 text-secondary rotate-1">
+<span class="material-symbols-outlined text-3xl">hourglass_empty</span>
+</div>
+<h3 class="font-display font-bold text-xl text-primary mb-3">Flexible Learning</h3>
+<p class="text-gray-600 text-sm leading-relaxed">
+                            Study at your own pace with lifetime access to all materials. Education that fits your busy schedule.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Courses -->
+<section class="py-24 relative z-10" id="courses">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-display font-bold text-3xl lg:text-4xl text-primary mb-3">Featured Courses</h2>
+<p class="text-gray-600">Hand-picked curriculum for maximum impact.</p>
+</div>
+<a class="hidden md:flex items-center gap-1 text-primary font-medium hover:text-secondary transition-colors" href="#">
+                    View all courses <span class="material-symbols-outlined">chevron_right</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Course Card 1 -->
+<article class="group bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-hover transition-all hover:-translate-y-1">
+<div class="aspect-video bg-gray-200 relative overflow-hidden">
+<img alt="Close up of financial accounting documents and calculator" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOdK49BVKA6X-G7ikUegYdhU3P-3UBl5_eoZU2B_rGwZ9Pt5WqdkRCvL4MQt5t3HfPNu-yzpS4dT02JTtyvAxos2WtUGN5rqW_yMI7SYf-oI3BnRhCOfdVtFLfLbjRaduWhoPXxweRAVLzh3ue8-F-9biIupuMr4H3rvTNa39Y9xpAExCrZeDky_RVnB-9VhK_GxSkJYjnVVz9FlBqYdJVL-qlw2-_IPUfqIZrEY-h6Kw-dVay_S-I8ljtDf-BJ8lZ43Fk5cnHzC0"/>
+<span class="absolute top-3 left-3 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-primary uppercase tracking-wide">Finance</span>
+</div>
+<div class="p-5">
+<div class="flex items-center gap-1 text-yellow-400 mb-2 text-xs font-medium">
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="text-gray-700">4.9 (120 reviews)</span>
+</div>
+<h3 class="font-display font-bold text-lg text-primary mb-2 line-clamp-2 h-[3.5rem]">Advanced Financial Accounting</h3>
+<p class="text-sm text-gray-500 mb-4">Prof. Sarah Jenkins</p>
+<div class="flex items-center justify-between border-t border-gray-100 pt-4">
+<span class="font-bold text-lg text-primary">$199</span>
+<button class="text-sm font-medium text-secondary hover:text-primary transition-colors">View Details</button>
+</div>
+</div>
+</article>
+<!-- Course Card 2 -->
+<article class="group bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-hover transition-all hover:-translate-y-1">
+<div class="aspect-video bg-gray-200 relative overflow-hidden">
+<img alt="Law books and gavel on a wooden desk" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvFsB_rxtAnVJlLdHE5JXpxxRZRkixyr2myI77RJsMvJB7SFoTOi52ffBotGHdM2y5FJ7-W_JLZdd_OutQWe2NLwBtJLjKr12x9hqJDFceX4CQEY-7wtqjAES-QB7YYt9UchnyBp4q-eNcKFvoaGIQzVwcMbY6L5TSiF7aOcZaOpirXqw-xfg_lMdgQObIDQLQrmnrAWV7Ni8fWVLeGviGXqUugVdKnzewIKxkTpKzvTuEMrWd5LHnamQ-oHY4GkgkhPRv5lOdUec"/>
+<span class="absolute top-3 left-3 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-primary uppercase tracking-wide">Law</span>
+</div>
+<div class="p-5">
+<div class="flex items-center gap-1 text-yellow-400 mb-2 text-xs font-medium">
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="text-gray-700">4.8 (85 reviews)</span>
+</div>
+<h3 class="font-display font-bold text-lg text-primary mb-2 line-clamp-2 h-[3.5rem]">Business Law Essentials</h3>
+<p class="text-sm text-gray-500 mb-4">Dr. Alan Grant</p>
+<div class="flex items-center justify-between border-t border-gray-100 pt-4">
+<span class="font-bold text-lg text-primary">$149</span>
+<button class="text-sm font-medium text-secondary hover:text-primary transition-colors">View Details</button>
+</div>
+</div>
+</article>
+<!-- Course Card 3 -->
+<article class="group bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-hover transition-all hover:-translate-y-1">
+<div class="aspect-video bg-gray-200 relative overflow-hidden">
+<img alt="Marketing team brainstorming strategy on whiteboard" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdJUK5R3JUu6jT69Mn2PRLFaofOsb9aJnQVNOhQm5XqRXm9egroyAKG7oQ39LQUcwq23QU0jE6-WzMVcurSr--KhDQ9ha6NJcZg3Rc9snRX8ExTs7rjjQA_5JuWyZDTigqnqCtRf6d-6sydQXd7jrJZ_pvg-Ul07PcM0dtKVnkw0ZlDnYLoyuyAbL-TJ7Tz0pwy8CIJpue2O_18x22Qh45sFten21Sm927YEi29c0vNPB81PokwAjPwrmv4-cIAGmUEpL2xfuwl1I"/>
+<span class="absolute top-3 left-3 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-primary uppercase tracking-wide">Marketing</span>
+</div>
+<div class="p-5">
+<div class="flex items-center gap-1 text-yellow-400 mb-2 text-xs font-medium">
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="text-gray-700">5.0 (200 reviews)</span>
+</div>
+<h3 class="font-display font-bold text-lg text-primary mb-2 line-clamp-2 h-[3.5rem]">Marketing Strategy Masterclass</h3>
+<p class="text-sm text-gray-500 mb-4">Emily Chen</p>
+<div class="flex items-center justify-between border-t border-gray-100 pt-4">
+<span class="font-bold text-lg text-primary">$129</span>
+<button class="text-sm font-medium text-secondary hover:text-primary transition-colors">View Details</button>
+</div>
+</div>
+</article>
+<!-- Course Card 4 -->
+<article class="group bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-hover transition-all hover:-translate-y-1">
+<div class="aspect-video bg-gray-200 relative overflow-hidden">
+<img alt="Graph showing economic trends on a tablet" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbDILuHOByKvx638lOk5QMHT9RJ0IyIcupTi6-2Fxrj4e0WokY4aXLJO4JiRY--G1mnFLsqbBRjVginZiBoIrRhoXOBX_Z8MWlipjusudWI2ChFttHjlJdORUZXDLZMPkUqsFvcq17KXm_9rc_BH7yLqb6znWTgRk7ueHkKC4Socxnn_xBbKx0J_1AygawwVP6B0vzcypnI_1nOCSH3FqCBoSSEtOSRzqpHi5wEEHFGzKdxSE_Ea-A1TAKbkfXm9iRQo5ZCA0OM5A"/>
+<span class="absolute top-3 left-3 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full text-primary uppercase tracking-wide">Economics</span>
+</div>
+<div class="p-5">
+<div class="flex items-center gap-1 text-yellow-400 mb-2 text-xs font-medium">
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="text-gray-700">4.7 (94 reviews)</span>
+</div>
+<h3 class="font-display font-bold text-lg text-primary mb-2 line-clamp-2 h-[3.5rem]">Economics for Leaders</h3>
+<p class="text-sm text-gray-500 mb-4">Markus Sterling</p>
+<div class="flex items-center justify-between border-t border-gray-100 pt-4">
+<span class="font-bold text-lg text-primary">$179</span>
+<button class="text-sm font-medium text-secondary hover:text-primary transition-colors">View Details</button>
+</div>
+</div>
+</article>
+</div>
+<div class="mt-8 text-center md:hidden">
+<a class="inline-flex items-center gap-1 text-primary font-medium hover:text-secondary transition-colors" href="#">
+                    View all courses <span class="material-symbols-outlined">chevron_right</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Consultancy Section -->
+<section class="py-24 bg-background-off relative overflow-hidden z-10" id="consultancy">
+<!-- Background Decoration -->
+<div class="absolute right-0 top-0 w-1/3 h-full bg-secondary/5 skew-x-12 origin-top-right"></div>
+<div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
+<div class="flex flex-col lg:flex-row items-center gap-16">
+<!-- Image Side (60%) -->
+<div class="w-full lg:w-[55%] relative">
+<div class="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3] group">
+<img alt="Professional business consultation in a modern office" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_0qfOLCcu1gZBdIJbx-rWN3HbvyaWDTmA6W6RjoRImViyyLdhOtZrPayd599rucVqX2PHS2jTI9WWOZCuKbQgUvzBWEdhaJ8lOeS5NSe6-sBCU0cglysK280zOQSyJuDmQOzVConvXn4iY8lzcjfsTQ1zoBbulaiGS7c8JrO7r367Bpq9-yZIZOLeLR-DHXeLHA2CvP7wzMlltCRvbVC1aZZobl8U-CdU3wj4uQ_9YIgJf5fX2ZyVGZVeiCUOVzuWcD4D4DMcztA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white max-w-sm">
+<p class="font-display italic text-xl">"The mentorship I received completely changed my career trajectory."</p>
+<p class="text-sm mt-2 opacity-90 font-medium">— David R., Senior Analyst</p>
+</div>
+</div>
+<!-- Decorative element -->
+<div class="absolute -bottom-6 -right-6 w-24 h-24 bg-dots-pattern opacity-50"></div>
+</div>
+<!-- Content Side (40%) -->
+<div class="w-full lg:w-[45%] space-y-8">
+<div>
+<span class="px-3 py-1 bg-secondary/10 text-secondary text-sm font-bold rounded-full uppercase tracking-wider mb-4 inline-block">1-on-1 Consultancy</span>
+<h2 class="font-display font-bold text-3xl lg:text-4xl text-primary mb-4">Accelerate your career with personalized guidance.</h2>
+<p class="text-gray-600 leading-relaxed">
+                            Need help choosing a specialization? Want to review your resume? Our experts are here to help you navigate the commerce landscape.
+                        </p>
+</div>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-accent mt-0.5">verified</span>
+<span class="text-gray-700">Resume &amp; Portfolio Review</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-accent mt-0.5">verified</span>
+<span class="text-gray-700">Mock Interviews with Feedback</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-accent mt-0.5">verified</span>
+<span class="text-gray-700">Career Path Planning Strategy</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-accent mt-0.5">verified</span>
+<span class="text-gray-700">Direct Industry Connections</span>
+</li>
+</ul>
+<button class="bg-primary hover:bg-[#152a45] text-white px-8 py-3.5 rounded-lg font-medium shadow-soft hover:shadow-hover transition-all">
+                        Learn More
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Success Stories -->
+<section class="py-24 relative z-10">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="font-display font-bold text-3xl lg:text-4xl text-primary mb-4">Student Success Stories</h2>
+<div class="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center relative">
+<div class="absolute -top-6 w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center text-xl shadow-md">
+<span class="material-symbols-outlined">format_quote</span>
+</div>
+<div class="w-20 h-20 rounded-full overflow-hidden mb-4 border-2 border-white shadow-md">
+<img alt="Portrait of Michael Chen" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVwQ_NkXdmGkHLmrxoXBXD4uStPadJIrZ976LpJfKwmiY06d057W7N6cxdRvAzL6y3YReOufsicPhem3GSFzi7xl8po_S0YgANFLrvNclgJ68U7ET2k8nJh4mAhMSkMvA8pey8uq5kUYMvY7pxnGdXvHwsIDwu3wvcXena-1woGfKfsGHO4VNU9yZUBuDEHhXBctd5sKTy9Fu_Ft0LS7TcSPieNRHQlILXTiVXyMSvppWb0-9CQArg-kxvS2LRFrgo5Jnn_LEYSXc"/>
+</div>
+<p class="font-display text-lg text-primary italic mb-6">"I passed my CPA exam on the first try thanks to the structured materials provided here. It felt like cheating!"</p>
+<div class="mt-auto">
+<h4 class="font-bold text-primary">Michael Chen</h4>
+<p class="text-xs text-gray-500 uppercase tracking-wide">CPA Candidate</p>
+<p class="text-xs text-accent font-medium mt-1">Acquired Job at Deloitte</p>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center relative mt-0 md:mt-8 lg:mt-0">
+<div class="absolute -top-6 w-12 h-12 bg-secondary text-white rounded-full flex items-center justify-center text-xl shadow-md">
+<span class="material-symbols-outlined">format_quote</span>
+</div>
+<div class="w-20 h-20 rounded-full overflow-hidden mb-4 border-2 border-white shadow-md">
+<img alt="Portrait of Sarah Johnson" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB49PeJOj8VEJi9oniyd7oCFORBCLyy6kp-QnAWMHPjwDGSKKVOyV6GLAuEZFL0j-cmPmZ7vcZmEMXkNmgVwu2hzGDCPWz1tbdAtFQjsFdo6lILK1hzBcAq8DCkuHDzYHT6b3Bq8D41XnXxur_V-B7kUnIfyFrH8-7-YhU3K8MqFeOEpD71DN5k7Wt9WRUuI-ee8vRqXZ-VeOCE6xpz8_5cP9ca9yZjdnZJWjuAC6RJwxqArnhZE1tR-Oj0n3JeyK9nkjkuG8d5gKY"/>
+</div>
+<p class="font-display text-lg text-primary italic mb-6">"The marketing course wasn't just theory. We ran actual campaigns. That portfolio got me hired."</p>
+<div class="mt-auto">
+<h4 class="font-bold text-primary">Sarah Johnson</h4>
+<p class="text-xs text-gray-500 uppercase tracking-wide">Marketing Specialist</p>
+<p class="text-xs text-accent font-medium mt-1">Promoted to Manager</p>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center relative">
+<div class="absolute -top-6 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl shadow-md">
+<span class="material-symbols-outlined">format_quote</span>
+</div>
+<div class="w-20 h-20 rounded-full overflow-hidden mb-4 border-2 border-white shadow-md">
+<img alt="Portrait of Elena Rodriguez" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI65_Afo9NO58qM_F2vG_BmG_wq8nullkZ2PX3VrK-jKP_-WhLJ7NQdTjD9dRgK3R2StugiXxU4uWb8bUIRcKPBtfAYVeZbRdAhBSFdEvmmN7RYDQWbE-OR3txyMErvTdWr40wzCJEsAN5L2VrxJivb-Uf1f-luRgUq3kM7SGiCmKkxbv9Gsp11z0o4tFeOZFlm8VVyU9459cEvhORQ0gn2QSyO0juGeiMzjafPK0361HMcCoHujK911P5S_O15M33LRUKIEcEDt0"/>
+</div>
+<p class="font-display text-lg text-primary italic mb-6">"Switching from engineering to commerce was scary. The mentors here made the transition seamless."</p>
+<div class="mt-auto">
+<h4 class="font-bold text-primary">Elena Rodriguez</h4>
+<p class="text-xs text-gray-500 uppercase tracking-wide">Business Analyst</p>
+<p class="text-xs text-accent font-medium mt-1">MBA Admit</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter -->
+<section class="py-24 relative z-10 overflow-hidden">
+<div class="max-w-4xl mx-auto px-6 lg:px-8 relative">
+<!-- Organic Shape Background -->
+<div class="absolute inset-0 bg-[#1e3a5f] rounded-[3rem] rotate-1 shadow-xl z-0 transform transition-transform hover:rotate-0 duration-500"></div>
+<div class="relative z-10 p-12 lg:p-16 text-center text-white">
+<span class="material-symbols-outlined text-4xl mb-4 text-secondary">mail</span>
+<h2 class="font-display font-bold text-3xl mb-4">Stay ahead in Commerce</h2>
+<p class="text-blue-100 mb-8 max-w-lg mx-auto">Get the latest industry trends, free study tips, and course discounts delivered to your inbox.</p>
+<form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+<input class="flex-1 px-5 py-3 rounded-lg text-gray-900 focus:ring-2 focus:ring-secondary focus:outline-none border-none shadow-inner" placeholder="Enter your email address" required="" type="email"/>
+<button class="bg-secondary text-primary font-bold px-6 py-3 rounded-lg hover:bg-white transition-colors shadow-lg" type="submit">Subscribe</button>
+</form>
+<p class="text-xs text-blue-200 mt-4">We respect your privacy. Unsubscribe at any time.</p>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-white border-t border-gray-100 pt-16 pb-8 relative z-10">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+<!-- About -->
+<div>
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-2xl text-primary">school</span>
+<span class="font-display font-bold text-lg text-primary">Commerce Edu</span>
+</div>
+<p class="text-gray-500 text-sm leading-relaxed mb-6">
+                        Empowering the next generation of business leaders through accessible, high-quality education and mentorship.
+                    </p>
+<div class="flex gap-4">
+<a class="text-gray-400 hover:text-primary transition-colors" href="#"><span class="sr-only">Facebook</span><svg class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg></a>
+<a class="text-gray-400 hover:text-primary transition-colors" href="#"><span class="sr-only">Twitter</span><svg class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path></svg></a>
+<a class="text-gray-400 hover:text-primary transition-colors" href="#"><span class="sr-only">LinkedIn</span><svg class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg></a>
+</div>
+</div>
+<!-- Quick Links -->
+<div>
+<h3 class="font-bold text-primary mb-4">Quick Links</h3>
+<ul class="space-y-3 text-sm text-gray-500">
+<li><a class="hover:text-secondary transition-colors" href="#">Home</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Study Materials</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Consultancy</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<!-- Courses -->
+<div>
+<h3 class="font-bold text-primary mb-4">Popular Courses</h3>
+<ul class="space-y-3 text-sm text-gray-500">
+<li><a class="hover:text-secondary transition-colors" href="#">Financial Accounting</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Business Law</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Marketing Strategy</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Economics 101</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Corporate Finance</a></li>
+</ul>
+</div>
+<!-- Contact -->
+<div>
+<h3 class="font-bold text-primary mb-4">Contact</h3>
+<ul class="space-y-3 text-sm text-gray-500">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-lg mt-0.5">location_on</span>
+<span>123 Commerce St, Suite 400<br/>Business City, NY 10012</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">phone</span>
+<span>+1 (555) 123-4567</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">mail</span>
+<span>hello@commerceedu.com</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-400">
+<p>© 2023 Commerce Edu. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

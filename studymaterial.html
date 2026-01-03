@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Commerce Edu - Study Materials</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;900&amp;family=Permanent+Marker&amp;family=Patrick+Hand&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1f3b61",
+                        "secondary": "#e8904f",
+                        "accent": "#2d6a4f",
+                        "text-main": "#1a202c",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#14181e",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "hand": ["Patrick Hand", "cursive"],
+                        "marker": ["Permanent Marker", "cursive"],
+                        "mono-data": ["Roboto Mono", "monospace"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem", 
+                    },
+                    boxShadow: {
+                        'sketch': '3px 3px 0px 0px rgba(31, 59, 97, 0.1)',
+                        'polaroid': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 0 0 8px white',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .scribble-border {
+            border: 2px solid #1f3b61;
+            border-radius: 2px 255px 3px 25px / 255px 5px 225px 3px;
+        }
+        .organic-shape {
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        }
+        .organic-shape-2 {
+            border-radius: 64% 36% 29% 71% / 58% 38% 62% 42%;
+        }
+        .rotate-random-1 { transform: rotate(-1deg); }
+        .rotate-random-2 { transform: rotate(1deg); }
+        .rotate-random-3 { transform: rotate(-2deg); }
+        
+        .paper-texture {
+            background-color: #fff;
+            background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main font-display antialiased selection:bg-secondary/30 selection:text-primary">
+<div class="flex min-h-screen flex-col">
+<!-- Top Navigation -->
+<nav class="sticky top-0 z-50 w-full transition-all duration-300 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<!-- Logo -->
+<div class="flex items-center gap-3">
+<div class="relative w-10 h-10 flex items-center justify-center bg-primary rounded-lg text-white">
+<span class="material-symbols-outlined text-[28px]">school</span>
+</div>
+<span class="font-display font-bold text-xl tracking-tight text-primary">Commerce Edu</span>
+</div>
+<!-- Desktop Menu -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="homepage.html">Home</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="coursecatalog.html">Courses</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="consultancy.html">Consultancy</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="studymaterial.html">Study Materials</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="aboutus.html">About</a>
+<a class="text-sm font-medium text-text-main hover:text-secondary transition-colors" href="contactus.html">Contact</a>
+
+</div>
+<!-- CTA -->
+<div class="hidden md:flex items-center gap-4">
+<a class="text-sm font-semibold text-primary hover:text-secondary transition-colors" href="login.html">Login</a>
+<a class="bg-primary text-white text-sm font-medium px-5 py-2.5 rounded-lg shadow-sm hover:bg-[#152a45] hover:shadow-md transition-all" href="signup.html">Get Started</a>
+</div>
+<!-- Mobile Menu Button -->
+<div class="md:hidden flex items-center">
+<button class="text-text-main">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-1">
+<div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+<!-- Page Heading & Search -->
+<div class="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+<div class="flex flex-col gap-2">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 text-sm text-gray-500 mb-2 font-hand text-lg">
+<a class="hover:text-primary hover:underline decoration-secondary decoration-2 underline-offset-4" href="#">Home</a>
+<span class="material-symbols-outlined text-[16px] text-gray-400">chevron_right</span>
+<span class="text-gray-800 font-bold dark:text-gray-200">Study Materials</span>
+</nav>
+<h1 class="text-4xl font-black tracking-tight text-primary dark:text-white">
+                            Study Materials &amp; Resources
+                            <span class="inline-block text-secondary align-top text-4xl animate-bounce" style="animation-duration: 3s;">.</span>
+</h1>
+<p class="max-w-xl text-lg text-gray-600 dark:text-gray-400 font-light">
+                            Access our library of <span class="font-hand text-secondary font-bold text-xl px-1">hand-picked</span> notes, templates, and guides to ace your exams.
+                        </p>
+</div>
+<div class="w-full md:w-auto md:min-w-[400px]">
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+<span class="material-symbols-outlined text-gray-400 group-focus-within:text-primary transition-colors">search</span>
+</div>
+<input class="block w-full rounded-xl border-2 border-gray-200 bg-white py-3 pl-10 pr-4 text-gray-900 placeholder-gray-400 focus:border-primary focus:ring-0 sm:text-sm shadow-sketch transition-shadow hover:shadow-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white" placeholder="Search for 'Financial Accounting notes'..." type="text"/>
+<div class="absolute -right-2 -top-2 hidden lg:block transform rotate-12">
+<span class="material-symbols-outlined text-secondary text-3xl font-bold" style="font-variation-settings: 'FILL' 1;">stylus_note</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Sidebar Filters -->
+<aside class="w-full lg:w-1/4 flex-shrink-0">
+<div class="sticky top-24 space-y-8">
+<!-- Categories -->
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 dark:bg-gray-800 dark:border-gray-700 relative overflow-hidden">
+<!-- Decorative Doodle Background -->
+<div class="absolute -right-4 -top-4 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[120px]">menu_book</span>
+</div>
+<h3 class="font-marker text-xl text-primary mb-5 flex items-center gap-2">
+                                    Filters
+                                    <span class="h-0.5 w-12 bg-secondary rounded-full"></span>
+</h3>
+<div class="space-y-6">
+<!-- Resource Type -->
+<div>
+<h4 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-3 dark:text-white">Resource Type</h4>
+<div class="space-y-2">
+<label class="flex items-center gap-3 group cursor-pointer">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-gray-600 group-hover:text-primary transition-colors dark:text-gray-400">PDF Notes</span>
+</label>
+<label class="flex items-center gap-3 group cursor-pointer">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-gray-600 group-hover:text-primary transition-colors dark:text-gray-400">Excel Templates</span>
+</label>
+<label class="flex items-center gap-3 group cursor-pointer">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-gray-600 group-hover:text-primary transition-colors dark:text-gray-400">Video Tutorials</span>
+</label>
+<label class="flex items-center gap-3 group cursor-pointer">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-gray-600 group-hover:text-primary transition-colors dark:text-gray-400">Cheat Sheets</span>
+</label>
+</div>
+</div>
+<div class="border-t border-dashed border-gray-200 dark:border-gray-700"></div>
+<!-- Subjects -->
+<div>
+<h4 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-3 dark:text-white">Subject</h4>
+<div class="space-y-2">
+<label class="flex items-center gap-3 group cursor-pointer">
+<input checked="" class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-gray-600 font-medium text-primary dark:text-white">Financial Accounting</span>
+</label>
+<label class="flex items-center gap-3 group cursor-pointer">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-gray-600 group-hover:text-primary transition-colors dark:text-gray-400">Taxation</span>
+</label>
+<label class="flex items-center gap-3 group cursor-pointer">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-gray-600 group-hover:text-primary transition-colors dark:text-gray-400">Economics</span>
+</label>
+</div>
+</div>
+<div class="border-t border-dashed border-gray-200 dark:border-gray-700"></div>
+<!-- Pricing Toggle -->
+<div>
+<h4 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-3 dark:text-white">Price</h4>
+<div class="flex items-center bg-gray-100 p-1 rounded-lg dark:bg-gray-700">
+<button class="flex-1 py-1.5 px-3 rounded-md text-sm font-medium bg-white text-primary shadow-sm dark:bg-gray-600 dark:text-white">All</button>
+<button class="flex-1 py-1.5 px-3 rounded-md text-sm font-medium text-gray-500 hover:text-gray-700 dark:text-gray-400">Free</button>
+<button class="flex-1 py-1.5 px-3 rounded-md text-sm font-medium text-gray-500 hover:text-gray-700 dark:text-gray-400">Premium</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Banner: Need Help? -->
+<div class="bg-primary/5 rounded-2xl p-6 border-2 border-dashed border-primary/20 relative">
+<h4 class="font-hand text-xl font-bold text-primary mb-2">Can't find it?</h4>
+<p class="text-sm text-gray-600 mb-4">Request a specific resource and our tutors will upload it.</p>
+<button class="w-full bg-white border border-primary text-primary font-bold py-2 rounded-lg hover:bg-primary hover:text-white transition-colors text-sm shadow-sm">
+                                    Request Resource
+                                </button>
+<div class="absolute -bottom-2 -right-2 text-secondary transform rotate-12">
+<span class="material-symbols-outlined text-4xl">lightbulb</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Materials Grid -->
+<div class="flex-1">
+<!-- Featured Banner -->
+<div class="mb-8 relative overflow-hidden rounded-2xl bg-gradient-to-r from-accent to-[#1e4d3a] p-8 shadow-lg text-white">
+<div class="absolute top-0 right-0 h-full w-1/2 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+<div class="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+<div>
+<span class="inline-block bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full mb-3 shadow-sm transform -rotate-2">NEW THIS WEEK</span>
+<h2 class="text-3xl font-marker mb-2">2024 Tax Regulation Update</h2>
+<p class="text-accent-50 max-w-md mb-4">Comprehensive guide on the latest amendments in corporate tax laws. Includes case studies.</p>
+<button class="bg-white text-accent font-bold px-5 py-2.5 rounded-lg shadow-md hover:bg-gray-50 transition flex items-center gap-2">
+                                        Download Now 
+                                        <span class="material-symbols-outlined text-sm">download</span>
+</button>
+</div>
+<div class="hidden md:block relative">
+<div class="absolute -inset-4 bg-white/20 rounded-full blur-xl"></div>
+<div class="bg-white p-2 rounded shadow-polaroid transform rotate-3 w-40">
+<div class="bg-gray-100 h-48 rounded-sm overflow-hidden flex items-center justify-center relative group cursor-pointer">
+<img alt="Tax Document Preview" class="object-cover h-full w-full" data-alt="Close up of a financial document with a calculator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrBy0ezkUgbev2G-yGQcsfkSUMcT2rWpr1zgqQjTxkzoDOypaaP8lN9aqc2oXQYCkeL4LR-EcdrURhIbOSPG408hGZO5WcWfOM2eQI1C6wvZOD_h4xTOhdeKcigq7k5dcPxI6uzlAGBAXjII1LIeG0WHG2CK8W8raA0ocLTcQC6wrg907wiB9qlqFtnwEVF4UXj6akcX6OsP3Mv9t0ADsJssCA6qbueG9p7NLHtqpCjRcUDELPXlNEcuUZwCrQs4d9tR-GW7IBVlg"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white text-3xl">visibility</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Filters / Sort -->
+<div class="flex items-center justify-between mb-6">
+<p class="text-gray-500 font-medium"><span class="text-primary font-bold">124</span> Materials Found</p>
+<div class="flex items-center gap-2">
+<span class="text-sm text-gray-500">Sort by:</span>
+<select class="form-select border-none bg-transparent text-sm font-bold text-primary focus:ring-0 cursor-pointer pr-8">
+<option>Most Popular</option>
+<option>Newest First</option>
+<option>Highest Rated</option>
+</select>
+</div>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+<!-- Card 1: PDF -->
+<div class="group relative flex flex-col bg-white rounded-xl border border-gray-200 p-4 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl dark:bg-gray-800 dark:border-gray-700">
+<!-- Type Icon & Badge -->
+<div class="absolute -left-2 -top-2 z-20 h-10 w-10 bg-red-100 rounded-full flex items-center justify-center border-2 border-white shadow-sm transform -rotate-6 group-hover:rotate-0 transition-transform">
+<span class="material-symbols-outlined text-red-600">picture_as_pdf</span>
+</div>
+<div class="absolute top-3 right-3 z-20">
+<span class="bg-secondary text-white text-xs font-bold px-2 py-1 organic-shape shadow-sm">PREMIUM</span>
+</div>
+<!-- Thumbnail -->
+<div class="relative mx-auto w-full mb-4">
+<div class="bg-white p-2 shadow-polaroid rounded-sm transform rotate-1 group-hover:rotate-0 transition-transform duration-300">
+<div class="aspect-[4/3] bg-gray-100 overflow-hidden rounded-sm relative">
+<img alt="Financial Statements Notes" class="h-full w-full object-cover" data-alt="Notebook with financial charts" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY9lFtNZGETNzekwfwt9ahRLwJ_wVg-S34X1_JMh4nbILXaVMogmbmAcyIhnxlga7_sYg7dLu4_PExUQKLh-4gOrF_yntyFInxNEdHLygah9ZfkuJKIHN36ZkYq-duIy6WWc0s40ipsn19sFUELJ2IBbf3jOghWcSMuhYXKD7IoZ-OKq9R6VYKuglfVILiRJibA6tJUuJsaxIixlpuBcrxClXgqT5ZVHMMr1CP4sJRisftQiXXgrbcP06Sxho886vzXpEnZWGAflc"/>
+<div class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-2">
+<button class="bg-white text-primary text-xs font-bold px-3 py-1.5 rounded-full hover:bg-gray-100">Quick Preview</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Content -->
+<div class="flex flex-col flex-1">
+<div class="mb-1 flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-blue-50 text-blue-700 text-[10px] font-bold uppercase tracking-wide">Accounting</span>
+<div class="flex items-center text-yellow-400 text-xs">
+<span class="material-symbols-outlined text-[14px] font-variation-settings-fill">star</span>
+<span class="text-gray-400 ml-1 font-mono-data">4.8</span>
+</div>
+</div>
+<h3 class="text-lg font-bold text-text-main leading-tight mb-2 group-hover:text-primary transition-colors">Complete Financial Statements Guide</h3>
+<p class="text-sm text-gray-500 mb-4 line-clamp-2">Detailed breakdown of Balance Sheet, P&amp;L, and Cash Flow with examples.</p>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-700">
+<div class="flex flex-col">
+<span class="font-mono-data text-xs text-gray-400">2.4 MB • 45 Pgs</span>
+<span class="text-lg font-bold text-accent">$12.99</span>
+</div>
+<button class="h-10 w-10 rounded-full bg-gray-100 text-primary flex items-center justify-center hover:bg-accent hover:text-white transition-colors shadow-sm">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2: Excel -->
+<div class="group relative flex flex-col bg-white rounded-xl border border-gray-200 p-4 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl dark:bg-gray-800 dark:border-gray-700">
+<div class="absolute -left-2 -top-2 z-20 h-10 w-10 bg-green-100 rounded-full flex items-center justify-center border-2 border-white shadow-sm transform rotate-3 group-hover:rotate-0 transition-transform">
+<span class="material-symbols-outlined text-green-600">table_view</span>
+</div>
+<div class="absolute top-3 right-3 z-20">
+<span class="bg-accent text-white text-xs font-bold px-3 py-1 organic-shape-2 shadow-sm transform -rotate-2">FREE</span>
+</div>
+<div class="relative mx-auto w-full mb-4">
+<div class="bg-white p-2 shadow-polaroid rounded-sm transform -rotate-1 group-hover:rotate-0 transition-transform duration-300">
+<div class="aspect-[4/3] bg-gray-100 overflow-hidden rounded-sm relative">
+<img alt="Excel Spreadsheet" class="h-full w-full object-cover" data-alt="Laptop screen showing excel data charts" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChB9M24L2nduUK_AI53V2mFFZsall8VRM-l4KwFwRT8rabhzrlhpUGQbo1u2cy8q_PyLt1_Fl7DAiZ9zZKv2zKktud7-M-Z4lu6wShSvrgT5yB5dXfwcajuhvhp8xxxhxJn4G3keUeepET-u03zbFYjF4eg_Hx3Cy4iZMK_enEdTDBorUsalmHRkA-LfnIUr2NJ4tlOsSLPZEWqaUY7tUmWLujdhXWe9JlvtQl82lNWiUkS3MyLBl_8Lf7bZkiG9678g3X4BmxwLc"/>
+</div>
+</div>
+</div>
+<div class="flex flex-col flex-1">
+<div class="mb-1 flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-green-50 text-green-700 text-[10px] font-bold uppercase tracking-wide">Costing</span>
+<div class="flex items-center text-yellow-400 text-xs">
+<span class="material-symbols-outlined text-[14px] font-variation-settings-fill">star</span>
+<span class="text-gray-400 ml-1 font-mono-data">4.5</span>
+</div>
+</div>
+<h3 class="text-lg font-bold text-text-main leading-tight mb-2 group-hover:text-primary transition-colors">Automated Cost Sheet Template</h3>
+<p class="text-sm text-gray-500 mb-4 line-clamp-2">Plug-and-play Excel template with pre-built formulas for prime cost calculation.</p>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-700">
+<div class="flex flex-col">
+<span class="font-mono-data text-xs text-gray-400">450 KB • .XLSX</span>
+<span class="text-xs font-medium text-gray-500 mt-1">1.2k Downloads</span>
+</div>
+<button class="h-10 px-4 rounded-lg bg-primary/10 text-primary font-bold flex items-center gap-2 hover:bg-primary hover:text-white transition-colors">
+                                            Download <span class="material-symbols-outlined text-sm">download</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3: Video -->
+<div class="group relative flex flex-col bg-white rounded-xl border border-gray-200 p-4 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl dark:bg-gray-800 dark:border-gray-700">
+<div class="absolute -left-2 -top-2 z-20 h-10 w-10 bg-purple-100 rounded-full flex items-center justify-center border-2 border-white shadow-sm transform -rotate-2 group-hover:rotate-0 transition-transform">
+<span class="material-symbols-outlined text-purple-600">play_circle</span>
+</div>
+<div class="relative mx-auto w-full mb-4">
+<div class="bg-white p-2 shadow-polaroid rounded-sm transform rotate-2 group-hover:rotate-0 transition-transform duration-300">
+<div class="aspect-[4/3] bg-gray-900 overflow-hidden rounded-sm relative flex items-center justify-center">
+<img alt="Video Class" class="h-full w-full object-cover opacity-60" data-alt="People brainstorming on a whiteboard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBczVPhSVxo6Egmt8QWA3ihDw2hhy3KVdabRhonAs8Mp0c5JxaH1xHzdFYigKwska6Y6VHumdQs-eUMS_qhpF26DlUh6EBuDYGh71a635mf1xiVRVjAgDXJBP5Gu_QPEjsZ3bebFYzLoCnbYpv-j2ctlfkl8Baky0xVtk_UbXXMpz40w8Cn1w5UEeBe5BqXtv_82rR3L9LgXdnIbjOr8UND787Mzp_qg6nf5Ll2zncLz-HZBTCPRHEP2a7HcextIdkfpYSCgaeo00M"/>
+<span class="material-symbols-outlined text-white text-5xl absolute">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col flex-1">
+<div class="mb-1 flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-purple-50 text-purple-700 text-[10px] font-bold uppercase tracking-wide">Economics</span>
+<div class="flex items-center text-yellow-400 text-xs">
+<span class="material-symbols-outlined text-[14px] font-variation-settings-fill">star</span>
+<span class="text-gray-400 ml-1 font-mono-data">4.9</span>
+</div>
+</div>
+<h3 class="text-lg font-bold text-text-main leading-tight mb-2 group-hover:text-primary transition-colors">Macro-Economics Crash Course</h3>
+<p class="text-sm text-gray-500 mb-4 line-clamp-2">2-hour intensive video covering national income, inflation, and fiscal policy.</p>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-700">
+<div class="flex flex-col">
+<span class="font-mono-data text-xs text-gray-400">120 Mins • HD</span>
+<span class="text-lg font-bold text-accent">$24.99</span>
+</div>
+<button class="h-10 w-10 rounded-full bg-gray-100 text-primary flex items-center justify-center hover:bg-accent hover:text-white transition-colors shadow-sm">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4: Infographic -->
+<div class="group relative flex flex-col bg-white rounded-xl border border-gray-200 p-4 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl dark:bg-gray-800 dark:border-gray-700">
+<div class="absolute -left-2 -top-2 z-20 h-10 w-10 bg-orange-100 rounded-full flex items-center justify-center border-2 border-white shadow-sm transform rotate-6 group-hover:rotate-0 transition-transform">
+<span class="material-symbols-outlined text-orange-600">image</span>
+</div>
+<div class="absolute top-3 right-3 z-20">
+<span class="bg-accent text-white text-xs font-bold px-3 py-1 organic-shape shadow-sm">FREE</span>
+</div>
+<div class="relative mx-auto w-full mb-4">
+<div class="bg-white p-2 shadow-polaroid rounded-sm transform -rotate-2 group-hover:rotate-0 transition-transform duration-300">
+<div class="aspect-[4/3] bg-gray-100 overflow-hidden rounded-sm relative">
+<img alt="Process Flowchart" class="h-full w-full object-cover" data-alt="Colorful infographic flowchart on a wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgLdRgVjxJHjENht14SUVHSdFWcnudBb6W6ytyL1OBS7VDcXnHKxh0mGKV2PreKI7YYYQqhD7eiWVQDAuC8Ve1W2C3Ww_hBMuft5CA3l89jU1A5bKR5Fx-c4xAACdKBkNLEt6rDDIMPTYgB7XXmxzkuzjNNenlr-DSfzhMl7pYXhWIgjUf9fRafeac3WHR2jnCEtPHfKev0SaXcJ3vNpGAp30i_gdW1BHugP0CddWIMlWQJd0SnFe0uvnP-A43CaYTPK8UBGj7qUY"/>
+</div>
+</div>
+</div>
+<div class="flex flex-col flex-1">
+<div class="mb-1 flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-orange-50 text-orange-700 text-[10px] font-bold uppercase tracking-wide">Corporate Law</span>
+</div>
+<h3 class="text-lg font-bold text-text-main leading-tight mb-2 group-hover:text-primary transition-colors">Company Incorporation Process Map</h3>
+<p class="text-sm text-gray-500 mb-4 line-clamp-2">Visual flowchart of steps required to incorporate a Pvt Ltd company.</p>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-700">
+<div class="flex flex-col">
+<span class="font-mono-data text-xs text-gray-400">1.8 MB • PNG</span>
+<span class="text-xs font-medium text-gray-500 mt-1">856 Downloads</span>
+</div>
+<button class="h-10 px-4 rounded-lg bg-primary/10 text-primary font-bold flex items-center gap-2 hover:bg-primary hover:text-white transition-colors">
+                                            Download <span class="material-symbols-outlined text-sm">download</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 5: Bundle -->
+<div class="group relative flex flex-col bg-white rounded-xl border border-gray-200 p-4 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl dark:bg-gray-800 dark:border-gray-700 md:col-span-2 bg-gradient-to-br from-white to-gray-50">
+<div class="absolute -left-2 -top-2 z-20 h-10 w-10 bg-primary text-white rounded-full flex items-center justify-center border-2 border-white shadow-sm">
+<span class="material-symbols-outlined">inventory_2</span>
+</div>
+<div class="absolute top-3 right-3 z-20">
+<span class="bg-secondary text-white text-xs font-bold px-3 py-1 organic-shape-2 shadow-sm transform rotate-1">BUNDLE SALE</span>
+</div>
+<div class="flex flex-col md:flex-row gap-6 h-full">
+<div class="w-full md:w-1/3 relative mt-4 md:mt-0">
+<!-- Stacked effect -->
+<div class="absolute top-0 left-2 w-full h-40 bg-gray-200 rounded-sm shadow-sm transform rotate-3"></div>
+<div class="absolute top-0 left-1 w-full h-40 bg-gray-300 rounded-sm shadow-sm transform rotate-1"></div>
+<div class="relative bg-white p-2 shadow-polaroid rounded-sm transform -rotate-2 w-full z-10">
+<div class="aspect-[4/3] bg-gray-100 overflow-hidden rounded-sm">
+<img alt="Accounting Package" class="h-full w-full object-cover" data-alt="Desk with multiple accounting books and a calculator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzVm4qAPJYGWqTQbar8jBPea3z6f1r62c-APfbletmc2lFJ8SU9nzkkgNH4GH0B2iomp-8T571m2w360m6qSXHglHorVRK5HKgnbvEGvwl7B6u5hXZRzc5FK0sVXNfIYtsX_Mpv0jf50nwZoKKaOXTh42ycOnzGKM6VSidwANWFcqn_qhpLDWSmfapePfup3jukMgf6g8NlAoR2qEFVxUuPTzlKa0SWaqHIyjxZupSC5m7Dwz4xg9Ut6gUw5aV9GDvAHm9MtpJV1c"/>
+</div>
+</div>
+</div>
+<div class="flex flex-col flex-1 justify-center py-2">
+<div class="mb-2">
+<span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 text-[10px] font-bold uppercase tracking-wide">Mega Pack</span>
+</div>
+<h3 class="text-2xl font-black text-primary leading-tight mb-2">Accounting Masterclass Bundle</h3>
+<p class="text-sm text-gray-600 mb-4">Get the complete set: Financial Accounting Notes, Costing Templates, and 5 Hours of Video Lectures at a 40% discount.</p>
+<div class="flex items-center gap-4 mt-auto">
+<div class="flex items-baseline gap-2">
+<span class="text-2xl font-black text-accent">$49.99</span>
+<span class="text-sm text-gray-400 line-through font-mono-data">$85.00</span>
+</div>
+<button class="flex-1 bg-primary text-white font-bold h-12 rounded-xl shadow-md hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+                                                View Collection <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-12 flex justify-center">
+<nav class="flex items-center gap-2">
+<button class="h-10 w-10 rounded-lg border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-gray-50">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="h-10 w-10 rounded-lg bg-primary text-white font-bold flex items-center justify-center shadow-md">1</button>
+<button class="h-10 w-10 rounded-lg border border-gray-200 flex items-center justify-center text-gray-600 font-medium hover:bg-gray-50">2</button>
+<button class="h-10 w-10 rounded-lg border border-gray-200 flex items-center justify-center text-gray-600 font-medium hover:bg-gray-50">3</button>
+<span class="text-gray-400 px-2">...</span>
+<button class="h-10 w-10 rounded-lg border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-gray-50">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</nav>
+</div>
+</div>
+<!-- Right Sidebar / Quick Access (Optional desktop view) -->
+<div class="hidden xl:block w-64 flex-shrink-0 space-y-6">
+<!-- Profile / Stats -->
+<div class="bg-white rounded-xl shadow-sm border border-gray-200 p-4">
+<h4 class="font-bold text-gray-900 mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">history</span>
+                                Recently Viewed
+                            </h4>
+<div class="space-y-4">
+<div class="flex gap-3 items-start group cursor-pointer">
+<div class="h-12 w-12 rounded bg-gray-100 flex-shrink-0 overflow-hidden">
+<img class="h-full w-full object-cover" data-alt="Small thumbnail of document" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWv1JiAXPZvyRl4zsvmiRuQrmGAWRyhcneqZyCn8FwgIaGvMb6a5tF1scnygTVEfanyJI6w3bib6cS1BggZPpIlmZJ7mePCUpMlLE6DWkss4fhUgHe3TlUT8M9DFwurvKkef_MlqHBBnXoQFWdhBgNhw6zWfXqeMid0HKQDbUll2hr2tOsS5J8ZSwJD9QNeHozdsFzrFcVc8a0Tqta-LyA-ahSMPYvm0cngiqAkLphYnL6hAxyHK6sh-7qldYZUUO0LpTAMQTsrx0"/>
+</div>
+<div>
+<p class="text-xs font-bold text-gray-800 group-hover:text-primary line-clamp-2">Business Law Case Studies Vol. 1</p>
+<span class="text-[10px] text-gray-400 font-mono-data">Yesterday</span>
+</div>
+</div>
+<div class="flex gap-3 items-start group cursor-pointer">
+<div class="h-12 w-12 rounded bg-gray-100 flex-shrink-0 overflow-hidden">
+<img class="h-full w-full object-cover" data-alt="Small thumbnail of graph" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFQN7Uz8lknnCOl-e48nTH1oY73rD2bGcPtsXOt1TafG2bSljCRHeMeyzfeLYusD4rymsXLxuyf80TrdBnuZrr0sYH5mVoevI3zA51sMe3iKUMCQN2g6IOVShi9ht65DxEFgjCDICJe2QpG3rF_wbnd6uWn91jwIGLZm-EmTQQiNy3Lvu6HvScENSMYRwY-82wFXZ78pVl5nXrw-lEluNty4LcZVP_LtDcKleMK6IVngurOKLDrM5ETMAgDQ5aOVk8-FffeZ-6DNw"/>
+</div>
+<div>
+<p class="text-xs font-bold text-gray-800 group-hover:text-primary line-clamp-2">Demand &amp; Supply Curves</p>
+<span class="text-[10px] text-gray-400 font-mono-data">2 days ago</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Recommendations -->
+<div class="bg-paper-texture rounded-xl shadow-polaroid p-4 border border-gray-100 relative">
+<div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-accent text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-sm">FOR YOU</div>
+<h4 class="font-bold text-center text-primary mb-2 mt-2 font-hand text-lg">Based on your courses</h4>
+<div class="bg-white p-3 rounded border border-gray-200">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-red-500 text-lg">picture_as_pdf</span>
+<span class="text-xs font-bold text-gray-800">Adv. Tax Planning</span>
+</div>
+<button class="w-full bg-primary/10 hover:bg-primary hover:text-white text-primary text-xs font-bold py-1.5 rounded transition-colors">
+                                     Check it out
+                                 </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
